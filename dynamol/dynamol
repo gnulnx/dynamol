@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PLATFORM="OSX"
+DYNAMOL=$PWD
+
+#Make sure that the correct libraries are used
+export LD_LIBRARY_PATH=$DYNAMOL/.libs
+export __GL_FSAA_MODE=4
+export PYTHONPATH=$DYNAMOL/../Scripts
+#Now run dynamol
+
+if [ $PLATFORM = "OSX" ]; then
+	$DYNAMOL/Dynamol.app/Contents/MacOS/Dynamol $@
+elif [ $PLATFORM = "LINUX" ]; then
+	$DYNAMOL/Dynamol $@
+fi
+

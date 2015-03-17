@@ -1,0 +1,8 @@
+*.tar
+*.gz
+*.o
+*.pyc
+*.pyo
+*.so
+*.swp
+Boost
