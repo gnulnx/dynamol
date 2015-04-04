@@ -11,14 +11,14 @@
 #define UI_TESTVIEW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QWidget>
 
 #include "molview.h"
 #include "scriptengine.h"
@@ -142,8 +142,8 @@ public:
 
     void retranslateUi(QWidget *Form)
     {
-    Form->setWindowTitle(QApplication::translate("Form", "Dynamol V2", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("Form", "DynPy>", 0, QApplication::UnicodeUTF8));
+    Form->setWindowTitle(QApplication::translate("Form", "Dynamol V2", 0));
+    label->setText(QApplication::translate("Form", "DynPy>", 0));
     label->setStyleSheet("color: #99FFFF;");
 	Q_UNUSED(Form);
     } // retranslateUi
