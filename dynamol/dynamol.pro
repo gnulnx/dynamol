@@ -24,15 +24,17 @@ macx {
                 /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
                 /usr/local/include/ \
                 /usr/local/ \
+                /opt/X11/include/GL/ \
+                /opt/X11/include/ \
                 #/Users/jfurr/Boost/boost/python \
                 #/Users/jfurr/Boost/boost \
                 #/Users/jfurr/Boost
 
 
         LIBS += -lutil -lpthread -ldl \
-        /Library/Frameworks/Python.framework/Versions/2.7/Python \
-        -L/Library/Frameworks/Python.framework/Versions/2.7/lib \
-        -L/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
+        /System/Library/Frameworks/Python.framework/Versions/2.7/Python \
+        -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib \
+        -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
         /usr/local/lib/libboost_python.dylib
         #/Users/jfurr/Boost/bin.v2/libs/python/build/darwin/debug/libboost_python-d-1_34_1.dylib
         #$$DYNAMOL_HOME/Dynamol/dynamol/molecule.o \

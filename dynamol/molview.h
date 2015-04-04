@@ -16,7 +16,7 @@
 #include <qstring.h>
 #include <qlabel.h>
 #include "molview_control.h"
-
+#include "glu.h"
 #include <iomanip>
 #include <iostream>
 #include <list>
