@@ -3,10 +3,13 @@
 ######################################################################
 
 TEMPLATE = lib
-TARGET = 	molecule.so
+TARGET = 	molecule
 
-CONFIG += dll release x86 
-DEFINES += BOOST_PYTHON_DYNAMIC_LIB
+
+#CONFIG += dll release plugin 
+CONFIG += plugin 
+#DEFINES += BOOST_PYTHON_DYNAMIC_LIB
+DEFINES += BOOST_PYTHON_DYNAMIC_LIB CMAKE_C_COMPILER=clang CMAKE_CXX_COMPILER=clang++
 DEPENDPATH += .
 
 ###########################################
@@ -14,46 +17,27 @@ DEPENDPATH += .
 ###########################################
 macx {
 
-	DYNAMOL_HOME = /Users/jfurr/Dynamol/
-
-	INCLUDEPATH += . /Library/Frameworks/Python.framework/Versions/2.5/include/python2.5 \
-		/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/config \
-		/Users/jfurr/Boost/boost/python \ 
-		/Users/jfurr/Boost/boost \
-		/Users/jfurr/Boost
+	DYNAMOL_HOME = /Users/jfurr/dynamol
+	INCLUDEPATH += . /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 \ 
+		/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
+        /usr/local/include/ \
 
 
-	LIBS += -lutil -lpthread -ldl \
-	/Library/Frameworks/Python.framework/Versions/2.5/Python \
-	-L/Library/Frameworks/Python.framework/Versions/2.5/lib \
-	-L/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/config \
-	/Users/jfurr/Boost/bin.v2/libs/python/build/darwin/debug/libboost_python-d-1_34_1.dylib \
-	$$DYNAMOL_HOME/dynamol/molecule.o \	
-	$$DYNAMOL_HOME/dynamol/atom.o	\
-	$$DYNAMOL_HOME/dynamol/bond.o \
-	$$DYNAMOL_HOME/dynamol/dyobject.o	
+    LIBS += -L/usr/local/lib \
+        -lpython2.7 \
+        #-pthread\
+        /Users/jfurr/Downloads/boost_1_57_0/bin.v2/libs/python/build/darwin-4.2.1/release/threading-multi/libboost_python.dylib \
+	    $$DYNAMOL_HOME/dynamol/molecule.o \	
+	    $$DYNAMOL_HOME/dynamol/atom.o	\
+	    $$DYNAMOL_HOME/dynamol/bond.o \
+	    $$DYNAMOL_HOME/dynamol/dyobject.o	
+
+    # Python wants the library name to be molecule.so when we import molecule.
+    QMAKE_PRE_LINK = rm -f molecule.so
+    QMAKE_POST_LINK = ln -s libmolecule.dylib molecule.so
+    QMAKE_DISTCLEAN += molecule.so
+
 
 }
 
-############################################
-######## LINUX BUILD SECTION ###############
-############################################
-linux-g++ {
-	DYNAMOL_HOME = /home/jfurr/New_Build/
-	INCLUDEPATH += . $$DYNAMOL_HOME/usr/local/include/python2.5 \
-                $$DYNAMOL_HOME/usr/local/include/python2.5/config \
-                $$DYNAMOL_HOME/boost_1_34_1/boost/python \
-                $$DYNAMOL_HOME/boost_1_34_1/boost \
-                $$DYNAMOL_HOME/boost_1_34_1
-
-	LIBS += -lutil -lpthread -ldl \
-        $$DYNAMOL_HOME/usr/local/lib/python2.5/config/libpython2.5.a \
-        $$DYNAMOL_HOME/usr/local/lib/libboost_python-gcc41-d-1_34_1.so.1.34.1 \
-	$$DYNAMOL_HOME/Dynamol/dynamol/molecule.o \	
-	$$DYNAMOL_HOME/Dynamol/dynamol/atom.o   \
-	$$DYNAMOL_HOME/Dynamol/dynamol/bond.o \
-	$$DYNAMOL_HOME/Dynamol/dynamol/dyobject.o
-}
-
-# Input
-SOURCES += 	molecule.cpp
+SOURCES += *.cpp
