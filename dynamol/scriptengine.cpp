@@ -71,8 +71,6 @@ void ScriptEngine::keyPressEvent( QKeyEvent *event ) {
 	}
 	// ## UP ARROW
 	else if (event->key() == Qt::Key_Up) {
-		//cout <<"Up History Stack Before"<<endl;
-		//PrintStack(History);
 		if (History.size() > 0) {
 			QString txt = History.top();
 			PopStack.push(txt);
@@ -83,28 +81,17 @@ void ScriptEngine::keyPressEvent( QKeyEvent *event ) {
 			History.push(txt);
 			PopStack.pop();
 		}	
-		//cout <<"Up History Stack After"<<endl;
-		//PrintStack(History);
 	}
 	// ## DOWN ARROW
 	else if (event->key() == Qt::Key_Down) {
-		//cout <<"Down History Stack Before"<<endl;
-		//PrintStack(History);
-
 		if (PopStack.size() > 0) {
-			//PopStack.pop();
 			QString txt = PopStack.top();
 			PopStack.pop();
 			History.push(txt);
 			setText(txt);
 		} else {
-			//QString txt = History.top();
-			//PopStack.push(txt);
-			//History.pop();
 			setText("");
 		} 
-		//cout <<"Down History Stack After"<<endl;
-		//PrintStack(History);
 	}
 	// ## TAB
 	else if (event->key() == Qt::Key_Tab) {
@@ -195,6 +182,7 @@ void ScriptEngine::LoadMol(string &fileName) {
 	cmd += "del(sys.modules['LoadMol'])";
 
 	QString base_cmd(cmd.c_str());	
+    cout <<"base_cmd:" << cmd.c_str() << endl;
 	dynapy->RunCommand(base_cmd);
 	
 }
