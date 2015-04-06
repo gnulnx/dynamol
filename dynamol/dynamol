@@ -10,8 +10,8 @@ export PYTHONPATH=$DYNAMOL/../Scripts
 #Now run dynamol
 
 if [ $PLATFORM = "OSX" ]; then
-	$DYNAMOL/Dynamol.app/Contents/MacOS/Dynamol $@
+	$DYNAMOL/dynamol.app/Contents/MacOS/Dynamol $@
 elif [ $PLATFORM = "LINUX" ]; then
-	$DYNAMOL/Dynamol $@
+	$DYNAMOL/dynamol $@
 fi
 
