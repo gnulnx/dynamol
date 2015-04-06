@@ -9,8 +9,6 @@ using namespace boost::python;
 #include <QLineEdit>
 using namespace std;
 
-
-
 namespace python = boost::python;
 
 namespace dynamol {
@@ -73,12 +71,12 @@ string DynaPy::RunCommand(QString CMD) {
 	//Py_Initialize();
 	string cmd = CMD.toStdString();
 	string total = cmd;
-	/*
+	
 	cout <<"Running: " << cmd << endl;
 	string base_cmd = "import molecule\nfrom molview import *\nm = molView()\nm.";
 	
-    string total = base_cmd + cmd;
-	*/
+    //string total = base_cmd + cmd;
+	
 	//cout <<"Running: " << cmd << endl;
 	//cout <<"And that was run command"<<endl;
 	PyRun_SimpleString(total.c_str());
@@ -107,7 +105,7 @@ string DynaPy::RunCommand(QString CMD) {
 	cout <<"Command was Run"<<endl;
 	//Py_Finalize();
 	//cin >> test;
-	return "Must Return a String or OS X will crash...kinda liek Winders";
+	return "Must Return a String or OS X will crash...kinda like Winders";
 }
 
 void DynaPy::MolViewCommand()
