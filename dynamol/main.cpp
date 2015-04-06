@@ -30,7 +30,7 @@ using dynamol::molecule;
 using dynamol::bond;
 using dynamol::molView;
 using dynamol::DynaPy;
-//using dynamol::script_molView;
+using dynamol::script_molView;
 using dynamol::ScriptEngine;
 
 molecule *readMol2(string fileName) {
@@ -96,12 +96,15 @@ int main(int argc, char *argv[]) {
 	//molecule *mol = readSD("SDF/Trans.sdf");
 	//molecule *mol = readMol2("SDF/120939.mol2");
 	//molecule *mol = readMol2("SDF/1GW7.mol2");
-	//molecule *mol;
-	//if (sdFile[ sdFile.size()-1 ] == 'f') 
-	//	mol = readSD(sdFile);
-	//if (sdFile[ sdFile.size()-1 ] == '2')
-	//	mol = readMol2(sdFile);
-
+    /*
+	molecule *mol;
+	if (sdFile[ sdFile.size()-1 ] == 'f') {
+		mol = readSD(sdFile);
+    }
+	if (sdFile[ sdFile.size()-1 ] == '2') {
+		mol = readMol2(sdFile);
+    }
+    */
 	//molecule *mol = readMol2("SDF/Really_Big_Structure.mol2");
 	//cout <<mol->atoms.size() <<"\t" << mol->bonds.size() << endl;
 	//Initialize the molecule viewer
@@ -125,21 +128,23 @@ int main(int argc, char *argv[]) {
 
 	
 	molecule *mol;
-    //if (sdFile[ sdFile.size()-1 ] == 'f') {
-		//SE->CheckText();
-		//SE->LoadMol2(sdFile);
-		//string fileName = "../dynamol/" + sdFile;
+    /*
+    if (sdFile[ sdFile.size()-1 ] == 'f') {
+		SE->CheckText();
+		SE->LoadMol2(sdFile);
+		string fileName = "../dynamol/" + sdFile;
 		
-		//SE->LoadMol(fileName);
-	//	SE->LoadMol(sdFile);
-	//	cout <<"After SE->LoadMol: " << endl;
-		//SE->LoadMol(sdFile);
-	//}
-     
+		SE->LoadMol(fileName);
+		SE->LoadMol(sdFile);
+		cout <<"After SE->LoadMol: " << endl;
+		SE->LoadMol(sdFile);
+	}
+    */ 
 	if (sdFile[ sdFile.size()-1 ] == '2'){
     	mol = readMol2(sdFile);
 		v2->Show(mol);
 	} else {
+        cout <<"YOU ARE RIGHT HERE JOHNNY"<<endl;
 		SE->LoadMol(sdFile);
 	}
 

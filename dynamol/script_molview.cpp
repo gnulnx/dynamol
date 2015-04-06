@@ -13,9 +13,9 @@
 #include <fstream>
 using namespace std;
 
-dynamol::molView *script_molView::viewer = NULL;
+dynamol::molView *dynamol::script_molView::viewer = NULL;
 
-script_molView::script_molView() {
+dynamol::script_molView::script_molView() {
 	ifstream inFile(".molview_address.txt", ios::in);
 	if (!inFile) {
           cout <<"Viewer not Initialized"<<endl;
@@ -31,7 +31,7 @@ script_molView::script_molView() {
 	//int test = 0;
 	//cin >> test;	
 };
-script_molView::script_molView(dynamol::molView *viewer) {
+dynamol::script_molView::script_molView(dynamol::molView *viewer) {
 	this->viewer = viewer;
 	ofstream outFile(".molview_address.txt", ios::out);
 	outFile << viewer;
@@ -43,14 +43,14 @@ script_molView::~script_molView() {
 	cout <<"----------------------------script_molView::~script_molView()------------------------"<<endl;
 };
 */
-string script_molView::members() {
+string dynamol::script_molView::members() {
 	string funcs = "";
 	funcs += "SetMolColor(float r, float g, float b)";
 
 	return funcs;
 };
 
-bool script_molView::SetMolColor(float r, float g, float b) {
+bool dynamol::script_molView::SetMolColor(float r, float g, float b) {
 	cout <<"You are here"<<endl;
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
@@ -61,7 +61,7 @@ bool script_molView::SetMolColor(float r, float g, float b) {
 	return true;
 };
 
-bool script_molView::RunScript(string filename) {
+bool dynamol::script_molView::RunScript(string filename) {
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
         return false;
@@ -71,7 +71,7 @@ bool script_molView::RunScript(string filename) {
 
 }
 
-dynamol::molecule *script_molView::getCurrMol() {
+dynamol::molecule *dynamol::script_molView::getCurrMol() {
 	if (!viewer) {
         cout <<"Viewer not initialized"<<endl;
         return false;
@@ -82,7 +82,7 @@ dynamol::molecule *script_molView::getCurrMol() {
 	return viewer->getCurrentMol();
 }
 
-bool script_molView::Show(dynamol::molecule *mol) {
+bool dynamol::script_molView::Show(dynamol::molecule *mol) {
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
 		return false;
@@ -92,7 +92,7 @@ bool script_molView::Show(dynamol::molecule *mol) {
 	return true;
 }
 
-bool script_molView::SetFog(float start, float end, float Trans) {
+bool dynamol::script_molView::SetFog(float start, float end, float Trans) {
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
 		return false;
@@ -102,7 +102,7 @@ bool script_molView::SetFog(float start, float end, float Trans) {
 	return true;
 }
 
-bool script_molView::LoadMol(string fileName) {
+bool dynamol::script_molView::LoadMol(string fileName) {
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
 		return false;

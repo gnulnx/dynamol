@@ -14,7 +14,6 @@ using namespace std;
 namespace dynamol {
 	class molView;
 	class molecule;
-}
 
 class script_molView {
 public:
@@ -41,6 +40,7 @@ public:
 	bool Show(dynamol::molecule *);
 
 	bool LoadMol(string fileName);
+};
 };
 
 #endif
