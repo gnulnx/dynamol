@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#import molecule
 from molecule import *
 
 print "Test 1.  Molecule and Atom Object Creation"

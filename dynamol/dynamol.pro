@@ -4,9 +4,11 @@
 #TEMPLATE = app
 #TARGET = Dynamol
 #DEPENDPATH += .
-#DEFINES += BOOST_PYTHON_STATIC_LIB PyMol
+DEFINES += BOOST_PYTHON_STATIC_LIB PyMol
 #
 #QT += opengl
+
+#DEFINES += CMAKE_C_COMPILER=clang CMAKE_CXX_COMPILER=clang++
 
 TEMPLATE = app
 TARGET = dynamol
@@ -18,28 +20,25 @@ QT += core gui opengl widgets
 ####### OS X BUILD SECTION ################
 ###########################################
 macx {
+        message("OSX BUild")
+        QMAKE_CXXFLAGS += -stdlib=libc++ -std=c++11
+        QMAKE_LFLAGS += -lc++
 
-        DYNAMOL_HOME = /Users/jfurr/Dynamol/
         INCLUDEPATH += . /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 \
                 /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
                 /usr/local/include/ \
                 /usr/local/ \
                 /opt/X11/include/GL/ \
                 /opt/X11/include/ \
-                #/Users/jfurr/Boost/boost/python \
-                #/Users/jfurr/Boost/boost \
-                #/Users/jfurr/Boost
 
+        DYNAMOL_HOME = /Users/jfurr/dynamol/
 
-        LIBS += -lutil -lpthread -ldl \
-        /System/Library/Frameworks/Python.framework/Versions/2.7/Python \
-        -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib \
-        -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config \
-        /usr/local/lib/libboost_python.dylib
-        #/Users/jfurr/Boost/bin.v2/libs/python/build/darwin/debug/libboost_python-d-1_34_1.dylib
+        LIBS += -lutil -lpthread -ldl -lpython2.7 -lc++ \
+        #/usr/local/lib/libboost_python.dylib
+        /Users/jfurr/Downloads/boost_1_57_0/bin.v2/libs/python/build/darwin-4.2.1/release/threading-multi/libboost_python.dylib \
         #$$DYNAMOL_HOME/Dynamol/dynamol/molecule.o \
         #$$DYNAMOL_HOME/Dynamol/dynamol/atom.o   \
-        #$$DYNAMOL_HOME/Dynamol/dynamol/bond.o
+        #$$DYNAMOL_HOME/Dynamol/dynamol/bond.o \
 
 }
 

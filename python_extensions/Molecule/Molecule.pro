@@ -7,10 +7,13 @@ TARGET = 	molecule
 
 
 #CONFIG += dll release plugin 
-CONFIG += plugin 
+CONFIG += plugin
 #DEFINES += BOOST_PYTHON_DYNAMIC_LIB
 DEFINES += BOOST_PYTHON_DYNAMIC_LIB CMAKE_C_COMPILER=clang CMAKE_CXX_COMPILER=clang++
 DEPENDPATH += .
+
+QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
+QMAKE_LFLAGS += -lc++
 
 ###########################################
 ####### OS X BUILD SECTION ################
