@@ -30,8 +30,10 @@ molecule::molecule(string name)
 molecule::molecule(int PyObject) 
 : DyObject()
 {
+    cout <<"You are in molecule::molecule(int PyObject): "<< this << endl;
 	this->PyObject = PyObject;
 	Center[0] = Center[1] = Center[2] = 0.0;
+    this->name = "Python molecule";
 }
 
 molecule::molecule(const molecule &mol)
@@ -99,10 +101,9 @@ atom *molecule::addAtom(int num, string symbol, float x, float y, float z, int a
 		}
 	}
 	*/
-	atom *at = new atom(num, symbol, x, y, z, atomicNum);
+	atom *at = new dynamol::atom(num, symbol, x, y, z, atomicNum);
 	atoms.push_back(at);
 	at->parent = this;
-	
 	return at;
 }
 

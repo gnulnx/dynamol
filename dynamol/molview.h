@@ -40,9 +40,12 @@ class molView : public molViewControl  {
 	Q_OBJECT
 public:
 	molView(QWidget *parent=0, char *name=0);
+    molView(int PyObject=1);
 	void SetScripter(DynaPy *dynapy);
 	~molView();
-   
+  
+    //This is a variable that determines if the molecule was created in Python or C++
+    int PyObject; 
 
 	string hello(); 
 

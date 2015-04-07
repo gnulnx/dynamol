@@ -57,6 +57,19 @@ molView::~molView() {
 	cout <<"molView::~molView was called"<<endl;
 }
 
+
+/*
+molView::molView(int PyObject)
+: DyObject()
+//: molViewControl(Parent)
+{
+    cout <<"You are in molecule::molecule(int PyObject): "<< this << endl;
+    this->PyObject = PyObject;
+    Center[0] = Center[1] = Center[2] = 0.0;
+    this->name = "Python molecule";
+}
+*/
+
 molView::molView(QWidget *parent, char *name)
 : molViewControl(parent)
 {
@@ -163,16 +176,22 @@ void molView::FPS_Slot() {
 }
 
 void molView::Show(molecule *mol) {
-	Mols.clear();
+    cout <<"molView::Show:" << mol << endl;
+	//Mols.clear();
+    cout <<"HERE .5"<<endl;
 	if (mol->PyObject) {
+        cout <<"HERE .75" <<endl;
 		molecule *NewMol = new molecule(*mol);
+        cout <<"HERE .85" << NewMol << endl;
+        cout <<"HERE .86" << currMol << endl;
 		currMol = NewMol;
+        cout <<"HERE .95: "<< endl;
 		Mols.clear();
 	} else {
 		currMol = mol;
 		
 	}
-	
+    cout <<"HERE 1" << endl;	
 	Mols.push_back(currMol);
 
 	float minX, minY, minZ, maxX, maxY, maxZ;
@@ -185,6 +204,7 @@ void molView::Show(molecule *mol) {
 	center = currMol->getCenter();
 	//mol->CenterMol();
 
+    cout <<"HERE 2: " << endl;
 	for (int i=0; i<currMol->atoms.size(); i++) {
 		atom *atm = currMol->atoms[i];
 		float cd[3];		
@@ -208,7 +228,7 @@ void molView::Show(molecule *mol) {
 
 	}
 
-	
+	cout <<"HERE 3" << endl;
 	//This Value can be used to manipulate the clipping plane like pymol
 	zNear = +minZ-100;
 	//This value Needs to be at least the size of the molecule
@@ -241,12 +261,16 @@ void molView::Show(molecule *mol) {
 	glFogf(GL_FOG_DENSITY, 0.035f);
 	glEnable(GL_FOG);
 
+    cout <<"HERE 4" << endl;
 	//vector<float> center(3);
 	//for (int j=0; j<3; j++)
 	//	center[j] = 0.0;
 	currMol->BuildVertexArrays(WIRE, center);
+    cout <<"HERE 5" << endl;
 	Render(currMol);
+    cout <<"HERE 6" << endl;
 	updateGL();
+    cout <<"RETURNING"<<endl;
 	//glEnableClientState(GL_VERTEX_ARRAY);
 	//glEnableClientState(GL_COLOR_ARRAY);
 	//glColorPointer(3, GL_FLOAT, 0, Colors)

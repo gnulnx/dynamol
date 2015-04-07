@@ -19,7 +19,10 @@ atom::~atom() {
 }
 
 molecule *atom::getParent() 
-{ return parent; }
+{ 
+    cout <<"atom::getParent: "<< this->parent<<endl;
+    return this->parent; 
+}
 
 atom::atom(const atom &atm) 
 : DyObject() // You might want t keep the original object number???
