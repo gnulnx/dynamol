@@ -5,20 +5,18 @@
 TEMPLATE = lib
 TARGET = 	molecule
 
-
-#CONFIG += dll release plugin 
 CONFIG += plugin
-#DEFINES += BOOST_PYTHON_DYNAMIC_LIB
-DEFINES += BOOST_PYTHON_DYNAMIC_LIB CMAKE_C_COMPILER=clang CMAKE_CXX_COMPILER=clang++
+DEFINES += BOOST_PYTHON_DYNAMIC_LIB
 DEPENDPATH += .
 
-QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
-QMAKE_LFLAGS += -lc++
 
 ###########################################
 ####### OS X BUILD SECTION ################
 ###########################################
 macx {
+    message("OSX BUild")    
+    QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
+    QMAKE_LFLAGS += -lc++
 
 	DYNAMOL_HOME = /Users/jfurr/dynamol
 	INCLUDEPATH += . /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 \ 
