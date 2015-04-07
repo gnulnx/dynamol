@@ -17,12 +17,12 @@ using namespace boost::python;
 
 BOOST_PYTHON_MODULE(molview)
 {
-	class_<script_molView>("molView")
-		.def("members", &script_molView::members)
-		.def("SetMolColor", &script_molView::SetMolColor)
-		.def("getCurrMol", &script_molView::getCurrMol, return_internal_reference<>())
-		.def("Show", &script_molView::Show)
-		.def("SetFog", &script_molView::SetFog)	
+	class_<dynamol::script_molView>("molView")
+		.def("members", &dynamol::script_molView::members)
+		.def("SetMolColor", &dynamol::script_molView::SetMolColor)
+		.def("getCurrMol", &dynamol::script_molView::getCurrMol, return_internal_reference<>())
+		.def("Show", &dynamol::script_molView::Show)
+		.def("SetFog", &dynamol::script_molView::SetFog)	
 	;
 }
 

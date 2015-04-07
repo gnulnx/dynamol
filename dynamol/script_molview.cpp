@@ -74,7 +74,7 @@ bool dynamol::script_molView::RunScript(string filename) {
 dynamol::molecule *dynamol::script_molView::getCurrMol() {
 	if (!viewer) {
         cout <<"Viewer not initialized"<<endl;
-        return false;
+        return 0;
     }
 
 	dynamol::molecule *mol = viewer->getCurrentMol();

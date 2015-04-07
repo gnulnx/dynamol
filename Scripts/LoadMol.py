@@ -1,9 +1,9 @@
 #/usr/bin/env python
 
+import time
 from molview import *
 from molecule import *
 from ReadMolecule import *
-#import time
 #import random
 
 def LoadMol(fileName):
