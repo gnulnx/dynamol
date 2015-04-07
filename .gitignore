@@ -6,3 +6,7 @@
 *.so
 *.swp
 Boost
+moc_*
+ui_*
+Makefile
+.molview_address.txt
