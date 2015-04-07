@@ -10,7 +10,9 @@ Yes I really need to bring this project back to life.. and to be fair open sourc
 Compile Notes:
 =============
 You must compile with: 
+
 ```QMAKE_CXXFLAGS += -stdlib=libc++ -std=c++11```
+
 ```QMAKE_LFLAGS += -lc++```
 
 Because the new OSX c++ is libc++ and not libstdc++.
