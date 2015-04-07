@@ -17,6 +17,7 @@ macx {
     message("OSX BUild")    
     QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
     QMAKE_LFLAGS += -lc++
+    DESTDIR= ../../Scripts
 
 	DYNAMOL_HOME = /Users/jfurr/dynamol
 	INCLUDEPATH += . /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 \ 
@@ -36,7 +37,7 @@ macx {
     # Python wants the library name to be molecule.so when we import molecule.
     QMAKE_PRE_LINK = rm -f molecule.so
     QMAKE_POST_LINK = ln -s libmolecule.dylib molecule.so; ln -s libmolecule.dylib ../../Scripts/molecule.so
-    QMAKE_DISTCLEAN += molecule.so
+    QMAKE_CLEAN = molecule.so ../../Scripts/molecule.so ../../Scripts/libmolecule.dylib    
 
 
 }
