@@ -17,6 +17,7 @@ DEPENDPATH += .
 macx {
 
 	DYNAMOL_HOME = /Users/jfurr/Dynamol/
+
     QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
     QMAKE_LFLAGS += -lc++
 
@@ -31,18 +32,11 @@ macx {
         /Users/jfurr/Downloads/boost_1_57_0/bin.v2/libs/python/build/darwin-4.2.1/release/threading-multi/libboost_python.dylib \
         $$DYNAMOL_HOME/dynamol/*.o
 
-	#LIBS += -lutil -lpthread -ldl \
-	#/Library/Frameworks/Python.framework/Versions/2.5/Python \
-	#-L/Library/Frameworks/Python.framework/Versions/2.5/lib \
-	#-L/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/config \
-	#/Users/jfurr/Boost/bin.v2/libs/python/build/darwin/debug/libboost_python-d-1_34_1.dylib \
-	#$$DYNAMOL_HOME/dynamol/*.o
 
     # Python wants the library name to be molview.so when we import molecule.
     QMAKE_PRE_LINK = rm -f molview.so
-    QMAKE_POST_LINK = ln -s libmolview.dylib molview.so
+    QMAKE_POST_LINK = ln -s libmolview.dylib molview.so; ln -s libmolview.dylib ../../Scripts/molview.so
     QMAKE_DISTCLEAN += molview.so
-
 }
 
 ############################################

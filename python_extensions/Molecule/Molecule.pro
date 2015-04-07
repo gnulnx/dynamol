@@ -35,7 +35,7 @@ macx {
 
     # Python wants the library name to be molecule.so when we import molecule.
     QMAKE_PRE_LINK = rm -f molecule.so
-    QMAKE_POST_LINK = ln -s libmolecule.dylib molecule.so
+    QMAKE_POST_LINK = ln -s libmolecule.dylib molecule.so; ln -s libmolecule.dylib ../../Scripts/molecule.so
     QMAKE_DISTCLEAN += molecule.so
 
 
