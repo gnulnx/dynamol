@@ -8,5 +8,8 @@
 Boost
 moc_*
 ui_*
-Makefile
+Makefile*
 .molview_address.txt
+dynamol.app
+*.dylib
+.qmake.*
