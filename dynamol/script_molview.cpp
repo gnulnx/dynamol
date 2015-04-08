@@ -11,38 +11,61 @@
 #include "molview.h"
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 dynamol::molView *dynamol::script_molView::viewer = NULL;
 
+
+
 dynamol::script_molView::script_molView() {
-	ifstream inFile(".molview_address.txt", ios::in);
+    cout <<"* dynamol::script_molView::script_molView(): "<< this->viewer << endl;
+	ifstream inFile(".molview_address.txt", ios::in|ios::binary);
 	if (!inFile) {
           cout <<"Viewer not Initialized"<<endl;
           viewer = NULL;
           return;
 	}
-	void *address;
-	inFile >> address;
-	cout <<"address: " << address << endl;
-	inFile.close();
-	viewer = (dynamol::molView *)address;
-	cout <<"viewer from script_molView: " << viewer << endl;
-	//int test = 0;
-	//cin >> test;	
+    inFile.seekg (0, inFile.beg);
+    string s;
+    inFile >> std::hex >> s;
+    const char *address = s.c_str();
+    cout <<"address: " << address << endl;
+    void *vnum = (void *)strtol(address, NULL, 0);
+    cout <<"vnum: " << vnum << endl;
+    viewer = reinterpret_cast<dynamol::molView*>(vnum);
+    //string address;
+    //inFile >> address;
+    //cout <<"address: " << address << endl;
+    //cout << static_cast<void*>(&address) << endl;
+    //cout <<"address: " << address << endl;
+    //viewer = static_cast<dynamol::molView*>(address);
+    //void *c = reinterpret_cast<void *>(saddress);
+    
+    //const char *c = saddress.c_str();
+    //cout <<"c: " << c << endl;
+    //viewer = (dynamol::molView *)address;
+    // Now convert string to void * pointer
+    
+    //const void *address = reinterpret_cast<void *>( const_cast<char*>(c));
+    //cout <<"address: " << address << endl;
+
+    //reinterpret the cast to a molView pointer
+    //viewer = reinterpret_cast<dynamol::molView*>(address);
+    //viewer = (dynamol::molView *)saddress;
+	cout <<"viewer from script_molView: " << this->viewer << endl;
+    
 };
 dynamol::script_molView::script_molView(dynamol::molView *viewer) {
+    cout <<"dynamol::script_molView::script_molView(dynamol::molView *viewer): " << viewer << endl;
 	this->viewer = viewer;
-	ofstream outFile(".molview_address.txt", ios::out);
+	ofstream outFile(".molview_address.txt", ios::out|ios::binary);
 	outFile << viewer;
 	outFile.close();	
+    cout <<"sizeof(viewer): "<<sizeof(viewer) << "  " << viewer << endl;
 };
 
-/*
-script_molView::~script_molView() {
-	cout <<"----------------------------script_molView::~script_molView()------------------------"<<endl;
-};
-*/
 string dynamol::script_molView::members() {
 	string funcs = "";
 	funcs += "SetMolColor(float r, float g, float b)";

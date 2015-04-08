@@ -92,7 +92,6 @@ int main(int argc, char *argv[]) {
 
 	string sdFile = argv[1];
 	QApplication a(argc, argv);
-	DynaPy *scripter = new DynaPy();
 	//molecule *mol = readSD("SDF/Trans.sdf");
 	//molecule *mol = readMol2("SDF/120939.mol2");
 	//molecule *mol = readMol2("SDF/1GW7.mol2");
@@ -111,54 +110,35 @@ int main(int argc, char *argv[]) {
 	Ui::Form ui;
 	QWidget *widget = new QWidget;
 	ui.setupUi(widget);
+
+    //Initialize the molView
 	molView *v2 = dynamic_cast<molView *>(ui.widget);
-	cout <<"Viewer from main: " << v2 << endl;
+
+    //Initialize the ScriptEngine
 	ScriptEngine *SE = dynamic_cast<ScriptEngine *>(ui.lineEdit);
+
+	DynaPy *scripter = new DynaPy();
 	SE->SetDynaPy(scripter);
 	SE->viewer = v2;
 
 	scripter->lineEdit = ui.lineEdit;
-	//v2->Show(mol);
-	//v2->Show(mol);
-	//v2->currMol = mol;
 	v2->SetScripter(scripter);
 	script_molView *mvscript = new script_molView(v2);
-	//LoadMol(string fileName)
-	//widget->show();
+    
+    cout <<"script_molView: " << mvscript << endl; 
+    //int test = 0;
+    //cin >> test;
 
 	
 	molecule *mol;
-    /*
-    if (sdFile[ sdFile.size()-1 ] == 'f') {
-		SE->CheckText();
-		SE->LoadMol2(sdFile);
-		string fileName = "../dynamol/" + sdFile;
-		
-		SE->LoadMol(fileName);
-		SE->LoadMol(sdFile);
-		cout <<"After SE->LoadMol: " << endl;
-		SE->LoadMol(sdFile);
-	}
-    */ 
 	if (sdFile[ sdFile.size()-1 ] == '2'){
     	mol = readMol2(sdFile);
 		v2->Show(mol);
 	} else {
-        cout <<"YOU ARE RIGHT HERE JOHNNY"<<endl;
+        cout <<"main calling SE->LoadMol"<<endl;
 		SE->LoadMol(sdFile);
 	}
 
 	widget->show();
-	//Initialize the molviewr script class before callign any python
-	//script_molView *mvscript = new script_molView(v2);
-
-	// THIS IS A TEST ONLY SECTION
-	//scripter->setFileName("../../Scripts/test.py");
-	//scripter->start();
-	//scripter->setFileName("../../Scripts/test.py");
-    //scripter->start();
-
-	//And Finally we start out main GUI loop
-	//a.setActiveWindow(mviewer);
 	return a.exec();
 }

@@ -58,10 +58,10 @@ molView::~molView() {
 }
 
 
+//: molViewControl(Parent)
 /*
 molView::molView(int PyObject)
 : DyObject()
-//: molViewControl(Parent)
 {
     cout <<"You are in molecule::molecule(int PyObject): "<< this << endl;
     this->PyObject = PyObject;
@@ -73,6 +73,7 @@ molView::molView(int PyObject)
 molView::molView(QWidget *parent, char *name)
 : molViewControl(parent)
 {
+    cout <<"molView::molView"<<endl;
 	// ####### FIRST THING WE DO IS WRITE THE ADDRESS OF THE VIEWER TO A FILE ###
 	ofstream outFile(".molview_address.txt", ios::out);
 	outFile << this << endl;
@@ -176,7 +177,8 @@ void molView::FPS_Slot() {
 }
 
 void molView::Show(molecule *mol) {
-    cout <<"molView::Show:" << mol << endl;
+    cout <<"molView::Show: " << mol << endl;
+    cout <<"molView::this: " << this << endl;
 	//Mols.clear();
     cout <<"HERE .5"<<endl;
 	if (mol->PyObject) {
@@ -191,8 +193,11 @@ void molView::Show(molecule *mol) {
 		currMol = mol;
 		
 	}
+   
+    cout <<"this: " << this << endl;
     cout <<"HERE 1" << endl;	
 	Mols.push_back(currMol);
+    cout <<"HERE 1.5" << endl;
 
 	float minX, minY, minZ, maxX, maxY, maxZ;
 	minX = minY = minZ = 10000000;
@@ -202,6 +207,7 @@ void molView::Show(molecule *mol) {
 	totX = totY = totZ = 0.0;
 
 	center = currMol->getCenter();
+    cout <<"after currMol->getCenter()"<<endl;
 	//mol->CenterMol();
 
     cout <<"HERE 2: " << endl;

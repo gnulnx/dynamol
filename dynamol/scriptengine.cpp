@@ -22,6 +22,7 @@ namespace dynamol {
 ScriptEngine::ScriptEngine(QWidget *parent, char *name) 
 : QLineEdit(parent)
 {
+    cout <<"ScriptEngine::ScriptEngine" << endl;
 	name = name; //Make warning go away...nothing more
 }
 

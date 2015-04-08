@@ -20,10 +20,12 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
+#include "dyobject.h"
 using std::list;
 using namespace std;
 
 class QLineEdit;
+
 
 namespace dynamol {
 
@@ -40,7 +42,6 @@ class molView : public molViewControl  {
 	Q_OBJECT
 public:
 	molView(QWidget *parent=0, char *name=0);
-    molView(int PyObject=1);
 	void SetScripter(DynaPy *dynapy);
 	~molView();
   
