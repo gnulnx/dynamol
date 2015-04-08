@@ -6,6 +6,19 @@
     email                : john.furr@dynamol.com
  ***************************************************************************/
 
+/*
+    When dynamol is started up a script_molview object is instantiated
+    and assiend the previously created molView object. 
+    see: dynamol::script_molView::script_molView(dynamol::molView *viewer)
+
+    However when a python object creates a script_molview object it doesn't have 
+    any information about the molView object and thus has to get this information from
+    somewhere..   This works by first writing the address of the molView pointer in
+    dynamol::script_molView::script_molView(dynamol::molView *viewer)
+    and then reading it in dynamol::script_molView::script_molView()
+    where it is converted to a *molview pointer.
+*/
+
 #include "script_molview.h"
 #include "molecule.h"
 #include "molview.h"
@@ -20,50 +33,30 @@ dynamol::molView *dynamol::script_molView::viewer = NULL;
 
 
 dynamol::script_molView::script_molView() {
-    cout <<"* dynamol::script_molView::script_molView(): "<< this->viewer << endl;
+    /*
+        This method reads the address of the molView object that was created when dynamol 
+        started...see:  dynamol::script_molView::script_molView(dynamol::molView *viewer).
+        
+        It then points this->viewer at this address
+    */
 	ifstream inFile(".molview_address.txt", ios::in|ios::binary);
 	if (!inFile) {
           cout <<"Viewer not Initialized"<<endl;
           viewer = NULL;
           return;
 	}
-    inFile.seekg (0, inFile.beg);
-    string s;
-    inFile >> std::hex >> s;
-    const char *address = s.c_str();
-    cout <<"address: " << address << endl;
-    void *vnum = (void *)strtol(address, NULL, 0);
-    cout <<"vnum: " << vnum << endl;
-    viewer = reinterpret_cast<dynamol::molView*>(vnum);
-    //string address;
-    //inFile >> address;
-    //cout <<"address: " << address << endl;
-    //cout << static_cast<void*>(&address) << endl;
-    //cout <<"address: " << address << endl;
-    //viewer = static_cast<dynamol::molView*>(address);
-    //void *c = reinterpret_cast<void *>(saddress);
     
-    //const char *c = saddress.c_str();
-    //cout <<"c: " << c << endl;
-    //viewer = (dynamol::molView *)address;
-    // Now convert string to void * pointer
-    
-    //const void *address = reinterpret_cast<void *>( const_cast<char*>(c));
-    //cout <<"address: " << address << endl;
-
-    //reinterpret the cast to a molView pointer
-    //viewer = reinterpret_cast<dynamol::molView*>(address);
-    //viewer = (dynamol::molView *)saddress;
-	cout <<"viewer from script_molView: " << this->viewer << endl;
-    
+    string molview_memory_str;
+    inFile >> std::hex >> molview_memory_str;
+    viewer = reinterpret_cast<dynamol::molView*>( \     
+        (void *)strtol(molview_memory_str.c_str(), NULL, 0) \
+    );
 };
 dynamol::script_molView::script_molView(dynamol::molView *viewer) {
-    cout <<"dynamol::script_molView::script_molView(dynamol::molView *viewer): " << viewer << endl;
 	this->viewer = viewer;
 	ofstream outFile(".molview_address.txt", ios::out|ios::binary);
 	outFile << viewer;
 	outFile.close();	
-    cout <<"sizeof(viewer): "<<sizeof(viewer) << "  " << viewer << endl;
 };
 
 string dynamol::script_molView::members() {
@@ -74,7 +67,6 @@ string dynamol::script_molView::members() {
 };
 
 bool dynamol::script_molView::SetMolColor(float r, float g, float b) {
-	cout <<"You are here"<<endl;
 	if (!viewer) {
 		cout <<"Viewer not initialized"<<endl;
 		return false;
@@ -101,7 +93,6 @@ dynamol::molecule *dynamol::script_molView::getCurrMol() {
     }
 
 	dynamol::molecule *mol = viewer->getCurrentMol();
-	cout <<"script_molView::getCurrMol: " << mol->name << endl;
 	return viewer->getCurrentMol();
 }
 
