@@ -28,57 +28,22 @@
 #include <time.h>
 using namespace std;
 
-
-
 //BOOST Includes
 #include <boost/shared_ptr.hpp>
 
 namespace dynamol {
 
-string molView::hello() {
-	cout <<"Hello" << endl;
-	return "molView::hello";
-	/*
-	return this->currMol;
-	if (currMol) {
-		cout <<"You are right here..address is: "<< this << endl;
-		cout <<"currMol: " << this->currMol << endl;
-		cout <<"currMol->name: " << this->currMol->name << endl;
-	} else {
-		cout <<"currMol is NULL"<<endl;
-	}
-	*/
-};
 
 molView::~molView() {
-	// ### NOT A PORTABLE WAY TO REMOVE THIS FILE
-	// ### USE THE QT LIBRARIED TO DO THIS:
+	// NOTE NOT A PORTABLE WAY TO REMOVE THIS FILE
+	// NOTE USE THE QT LIBRARIED TO DO THIS:
 	system("rm .molview_address.txt");
-	cout <<"molView::~molView was called"<<endl;
 }
 
-
-//: molViewControl(Parent)
-/*
-molView::molView(int PyObject)
-: DyObject()
-{
-    cout <<"You are in molecule::molecule(int PyObject): "<< this << endl;
-    this->PyObject = PyObject;
-    Center[0] = Center[1] = Center[2] = 0.0;
-    this->name = "Python molecule";
-}
-*/
 
 molView::molView(QWidget *parent, char *name)
 : molViewControl(parent)
 {
-    cout <<"molView::molView"<<endl;
-	// ####### FIRST THING WE DO IS WRITE THE ADDRESS OF THE VIEWER TO A FILE ###
-	ofstream outFile(".molview_address.txt", ios::out);
-	outFile << this << endl;
-	// ############## THIS FILE IS DELETED ONCE THE MOLVIEW IS CLOSED..
-
 	quadObj = gluNewQuadric();
     wireObj = gluNewQuadric();
 
@@ -128,8 +93,6 @@ void  molView::selectObjects(int xInt, int yInt, float xFloat, float yFloat) {
 
 
 void  molView::selectBox(int newX, int newY, float newXFloat, float newYFloat) {//, button_state shiftState) {
-	cout <<"molView::selectBox:"<<endl;
-  
   boxEndX = newX; boxEndY=newY;
   QPainter p( this );
 
@@ -137,15 +100,19 @@ void  molView::selectBox(int newX, int newY, float newXFloat, float newYFloat) {
   int width = boxEndX-boxBeginX;
   int height = boxEndY-boxBeginY;
   if (width > 7 || height > 7 || width < 7 || height < 7) {
-    //bitBlt(this, 0, 0, saveState, 0, 0, this->width(), this->height(),  CopyROP);
+    /* candidate function not viable: no known conversion from 'QPixmap *' to 'const QPixmap' for 3rd
+      argument; dereference the argument with * inline void QPainter::drawPixmap(int x, int y, const QPixmap &pm)
+    */
+    //p.drawPixmap(0,0, saveState);
+    //bitBlt(this, 0, 0, saveState, 0, 0, this->width(), this->height());//,  Qt::RasterOp::CopyROP);
+    p.drawRect(boxBeginX, boxBeginY, width, height);
 	//QWidget *aa = parent();
 	//setPixmap(saveState2);
 	//renderArea->setPixmap(saveState2);
 	//render(&saveState2);
-	saveState2.save("Image.png");
-	glClearColor(1.0, 1.0, 1.0, 1.0);
-	p.drawPixmap( 0, 0, saveState2 );
-    p.drawRect(boxBeginX, boxBeginY, width, height);
+	//saveState2.save("Image.png");
+	//glClearColor(1.0, 1.0, 1.0, 1.0);
+	//p.drawPixmap( 0, 0, saveState2 );
   }
 
   glInitNames();
@@ -177,27 +144,17 @@ void molView::FPS_Slot() {
 }
 
 void molView::Show(molecule *mol) {
-    cout <<"molView::Show: " << mol << endl;
-    cout <<"molView::this: " << this << endl;
-	//Mols.clear();
-    cout <<"HERE .5"<<endl;
+	Mols.clear();
 	if (mol->PyObject) {
-        cout <<"HERE .75" <<endl;
 		molecule *NewMol = new molecule(*mol);
-        cout <<"HERE .85" << NewMol << endl;
-        cout <<"HERE .86" << currMol << endl;
 		currMol = NewMol;
-        cout <<"HERE .95: "<< endl;
 		Mols.clear();
 	} else {
 		currMol = mol;
 		
 	}
    
-    cout <<"this: " << this << endl;
-    cout <<"HERE 1" << endl;	
 	Mols.push_back(currMol);
-    cout <<"HERE 1.5" << endl;
 
 	float minX, minY, minZ, maxX, maxY, maxZ;
 	minX = minY = minZ = 10000000;
@@ -207,10 +164,7 @@ void molView::Show(molecule *mol) {
 	totX = totY = totZ = 0.0;
 
 	center = currMol->getCenter();
-    cout <<"after currMol->getCenter()"<<endl;
-	//mol->CenterMol();
 
-    cout <<"HERE 2: " << endl;
 	for (int i=0; i<currMol->atoms.size(); i++) {
 		atom *atm = currMol->atoms[i];
 		float cd[3];		
@@ -234,7 +188,6 @@ void molView::Show(molecule *mol) {
 
 	}
 
-	cout <<"HERE 3" << endl;
 	//This Value can be used to manipulate the clipping plane like pymol
 	zNear = +minZ-100;
 	//This value Needs to be at least the size of the molecule
@@ -267,16 +220,12 @@ void molView::Show(molecule *mol) {
 	glFogf(GL_FOG_DENSITY, 0.035f);
 	glEnable(GL_FOG);
 
-    cout <<"HERE 4" << endl;
 	//vector<float> center(3);
 	//for (int j=0; j<3; j++)
 	//	center[j] = 0.0;
 	currMol->BuildVertexArrays(WIRE, center);
-    cout <<"HERE 5" << endl;
 	Render(currMol);
-    cout <<"HERE 6" << endl;
 	updateGL();
-    cout <<"RETURNING"<<endl;
 	//glEnableClientState(GL_VERTEX_ARRAY);
 	//glEnableClientState(GL_COLOR_ARRAY);
 	//glColorPointer(3, GL_FLOAT, 0, Colors)
