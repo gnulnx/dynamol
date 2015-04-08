@@ -14,16 +14,13 @@
 
 namespace dynamol {
 
-molecule::~molecule() {
-	//cout <<"molecule::~molecule was called"<<endl;
-}
+molecule::~molecule() {}
 
 molecule::molecule(string name)
 : DyObject()
 {
 	this->name = name;
 	PyObject = false;
-	//cout <<"PyObject is: " << PyObject << endl;
 	Center[0] = Center[1] = Center[2] = 0.0;
 }
 
@@ -72,8 +69,6 @@ molecule::molecule(const molecule &mol)
 void molecule::SetName(string name)
 {	this->name = name; }
 
-//string &molecule::GetName()
-//{ return this->name; }
 vector<atom> molecule::getAtomObjs() {
 	AtomObjs.clear();
 	for (int i=0; i<atoms.size(); i++)
@@ -91,8 +86,7 @@ vector<bond> molecule::getBondObjs() {
 }
 
 atom *molecule::addAtom(int num, string symbol, float x, float y, float z, int atomicNum) {
-	//float radii;
-	//You need to find a faster safer way to check for dups...try a map or something
+	//NOTE: You need to find a faster safer way to check for dups...try a map or something
 	/*
 	for (int i=0; i<atoms.size(); i++) {
 		//if (atoms[i]->getNum() == num) {
@@ -109,55 +103,6 @@ atom *molecule::addAtom(int num, string symbol, float x, float y, float z, int a
 
 bond *molecule::addBond(int num, int from, int to, int order) {
 	atom *hold1, *hold2;
-	//int count = 0; //counter
-	/*
-	//First thing we do is make sure that the bond has not already been added
-	for (currentBond = bonds.begin(); currentBond != bonds.end(); currentBond++) {
-		bond *tmpbd = *currentBond;
-		if (tmpbd->from->num == from && tmpbd->to->num == to) {
-			return NULL;
-		} else if (tmpbd->from->num == to && tmpbd->to->num == from) {
-			return NULL;
-		}
-	}
-	bool c1 = false;
-	bool c2 = false;
-	bond *bd = NULL;
-	for (currentAtom = atoms.begin(); currentAtom != atoms.end(); currentAtom++) {
-		tmp = *currentAtom;
-		if (tmp->num == from) {
-			if (c1 == false) 
-				hold1 = *currentAtom;
-			c1 = true;
-			count++;
-		} else if (tmp->num == to) {
-			if (c2 == false) 
-				hold2 = *currentAtom;
-			c2 = true;
-			count++;
-		}
-
-		//break out of for loop early once we have both atoms accounted for
-		if (count == 2) {
-			break;
-		}
-
-		if (c1 == true && c2 == true) break;
-	}
-
-	if (count < 2) {
-		return NULL;
-	} else {
-		//create new bond
-		if (hold1->addAtom(hold2) && hold2->addAtom(hold1) ) {
-			bd = new bond(num, hold1, hold2, order);
-			bd->parent = this;
-			bonds.push_back(bd);
-		}
-		count = 0;
-	}
-	*/
-
 	
 	// THIS IS FAST CHECK CODE RIGHT HERE
 	hold1 = atoms[from-1];
@@ -299,7 +244,6 @@ void molecule::WireFrameModel(vector<float> &center) {
 		} 
 		if (bd->order > 1) {
 			atom *dbTemp = NULL;;
-			//float zRot = 0;
 			if (from->atoms.size() != 0) {
 				for (unsigned int i=0; i<from->atoms.size(); i++) {
 					if (from->atoms[i] != to) {
@@ -328,7 +272,6 @@ void molecule::WireFrameModel(vector<float> &center) {
 				float Coords3[3];
 				for (int j=0; j<3; j++)
 					Coords3[j] = dbTemp->fCoords[j];
-				//float *Coords3 = dbTemp->fCoords;
 
 				tmp[0] =  Coords3[0] - Coords1[0];
 				tmp[1] =  Coords3[1] - Coords1[1];
@@ -433,14 +376,12 @@ void molecule::WireFrameModel(vector<float> &center) {
             c1[j] = atoms[i]->fCoords[j] - center[j];
 			AtomVertexArray.push_back(c1[j]);
 			AtomColorArray.push_back(atoms[i]->COLOR[j]);
-			//AtomColorArray.push_back(1.0);
         }
 		AtomArraySize += 1;
 	}
 
 }
 void molecule::StickModel(vector<float> &center) {
-	//cout <<"Hello fro mstick Model"<<endl;
 	solidCylinder(1.2, -5.0, 2.3, 1.0, 10.0, 10);	
 }
 
@@ -495,24 +436,6 @@ void molecule::solidCylinder(double tx, double ty, double tz, double radius, dou
 	/* cylinder is centered at 0,0,0 and is aligned along Z */
 	z_top = tz+height;
 	z_bottom = tz;
-/*
-  glBegin(GL_TRIANGLE_STRIP);
-
-  for(i=0;i<n;++i)
-    {
-      glNormal3d(nx[i],ny[i],0);
-      glVertex3d(px[i],py[i],z_bottom);
-      glNormal3d(nx[i],ny[i],0);
-      glVertex3d(px[i],py[i],z_top);
-    }
-
-  glNormal3d(nx[0],ny[0],0);
-  glVertex3d(px[0],py[0],z_bottom);
-  glNormal3d(nx[0],ny[0],0);
-  glVertex3d(px[0],py[0],z_top);
-
-  glEnd();
-*/
 }
 
 } //End Namespace
