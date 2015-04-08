@@ -93,38 +93,37 @@ void  molView::selectObjects(int xInt, int yInt, float xFloat, float yFloat) {
 
 
 void  molView::selectBox(int newX, int newY, float newXFloat, float newYFloat) {//, button_state shiftState) {
-  boxEndX = newX; boxEndY=newY;
-  QPainter p( this );
+    //NOTE This code is currently broken Qt3-> Qt5 issue with bitBLT
+    boxEndX = newX; boxEndY=newY;
+    QPainter p( this );
 
-  p.setPen( Qt::blue );
-  int width = boxEndX-boxBeginX;
-  int height = boxEndY-boxBeginY;
-  if (width > 7 || height > 7 || width < 7 || height < 7) {
-    /* candidate function not viable: no known conversion from 'QPixmap *' to 'const QPixmap' for 3rd
-      argument; dereference the argument with * inline void QPainter::drawPixmap(int x, int y, const QPixmap &pm)
-    */
-    //p.drawPixmap(0,0, saveState);
-    //bitBlt(this, 0, 0, saveState, 0, 0, this->width(), this->height());//,  Qt::RasterOp::CopyROP);
-    p.drawRect(boxBeginX, boxBeginY, width, height);
-	//QWidget *aa = parent();
-	//setPixmap(saveState2);
-	//renderArea->setPixmap(saveState2);
-	//render(&saveState2);
-	//saveState2.save("Image.png");
-	//glClearColor(1.0, 1.0, 1.0, 1.0);
-	//p.drawPixmap( 0, 0, saveState2 );
-  }
+    p.setPen( Qt::blue );
+    int width = boxEndX-boxBeginX;
+    int height = boxEndY-boxBeginY;
+    if (width > 7 || height > 7 || width < 7 || height < 7) {
+        /* candidate function not viable: no known conversion from 'QPixmap *' to 'const QPixmap' for 3rd
+        argument; dereference the argument with * inline void QPainter::drawPixmap(int x, int y, const QPixmap &pm)
+        */
+        //p.drawPixmap(0,0, saveState);
+        //bitBlt(this, 0, 0, saveState, 0, 0, this->width(), this->height());//,  Qt::RasterOp::CopyROP);
+        p.drawRect(boxBeginX, boxBeginY, width, height);
+	    //QWidget *aa = parent();
+	    //setPixmap(saveState2);
+	    //renderArea->setPixmap(saveState2);
+	    //render(&saveState2);
+	    //saveState2.save("Image.png");
+	    //glClearColor(1.0, 1.0, 1.0, 1.0);
+	    //p.drawPixmap( 0, 0, saveState2 );
+    }
 
-  glInitNames();
-  
+    glInitNames();
 }
 
 
 void molView::SweepPickSelect(int x, int y, float scaledX, float scaledY) {
-	cout <<"SweepPickSelect"<<endl;
-	saveState2 = renderPixmap();
+    cout <<"SweepPickSelect"<<endl;
+    saveState2 = renderPixmap();
     saveState2.save("Image.png");
-
 }
 //This function is called when the middle 
 //Mouse button is singleClicked
@@ -139,7 +138,6 @@ void molView::ReCenter(int &x, int &y) {
 }
 
 void molView::FPS_Slot() {
-	//cout <<"fps: " << fps << endl;
 	fps = 0;
 }
 
@@ -194,7 +192,6 @@ void molView::Show(molecule *mol) {
 	//Right Now you assume the molecule is centered....Not sure this
 	//is the best way 
 	zFar = maxZ*4;
-	//cout <<"zFar: " << zFar << endl;
 
 	fogStart = 0.0;
 	if (minZ < minX and minZ < minY) {
@@ -220,12 +217,11 @@ void molView::Show(molecule *mol) {
 	glFogf(GL_FOG_DENSITY, 0.035f);
 	glEnable(GL_FOG);
 
-	//vector<float> center(3);
-	//for (int j=0; j<3; j++)
-	//	center[j] = 0.0;
 	currMol->BuildVertexArrays(WIRE, center);
 	Render(currMol);
 	updateGL();
+
+    //NOTE: What was this code for?  
 	//glEnableClientState(GL_VERTEX_ARRAY);
 	//glEnableClientState(GL_COLOR_ARRAY);
 	//glColorPointer(3, GL_FLOAT, 0, Colors)
@@ -233,7 +229,7 @@ void molView::Show(molecule *mol) {
 }
 
 void molView::SetScripter(DynaPy *dynapy) {
-	
+    //NOTE:  Is this actually used now?	
 	this->dynapy = dynapy;
 	if (this->dynapy != 0) {
         //connect(dynapy->lineEdit, SIGNAL(returnPressed()), this, SLOT(RunScript()));
@@ -243,7 +239,6 @@ void molView::SetScripter(DynaPy *dynapy) {
 
 
 void molView::InitSetup() {
-	
 	trackball(currentQuat, 0.0, 0.0, 0.0, 0.0);
     xTrans = yTrans = 0;
 	zTrans = 0.035;
@@ -251,8 +246,6 @@ void molView::InitSetup() {
 }
 
 void molView::initializeGL() {
-	//int test = 0;
-	//cin >> test;
 	//Setting initial ambient settings
 	light_ambient.resize(4);
 	light_ambient[0] = 0.75;
@@ -311,7 +304,6 @@ void molView::initializeGL() {
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_COLOR_MATERIAL);
-	//cout <<"INIT 2"<<endl;
 	glLightfv(GL_LIGHT1, GL_AMBIENT, &light_ambient[0]);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, &light_diffuse[0]);
 	glLightfv(GL_LIGHT1, GL_POSITION, &light_position[0]);
@@ -360,8 +352,6 @@ void molView::paintGL() {
 */
 void molView::resizeGL(int w, int h) {
 	glViewport( 0, 0, (GLint)w, (GLint)h );
-	//saveState2 = renderPixmap();
-	//saveState2.save("Image.png");	
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 
@@ -381,12 +371,11 @@ void molView::update() {
 /** This function takes a list of molecules to render as an argument  S
 */
 void molView::Render(molecule *mol) {
+    // NOTE:    You need to go through this entire function.
 	if (!mol) {
 		cout <<"No Molecule to render"<<endl;
 		return;
 	}
-	//saveState2 = renderPixmap();
-    //saveState2.save("Image.png");
 	fps++;
 	if (!mol)
 		return;
