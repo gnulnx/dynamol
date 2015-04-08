@@ -1,0 +1,19 @@
+#build-project all ;
+#build-project descriptors ;
+#build-project dynabase ;
+build-project dynamol 
+;
+
+#install ../dynamol/bin/dynamol-linux : dynamol ;
+
+#install libs : 
+#	dynabase
+#	convert
+#	dynatype
+#	dynacomp
+#	descriptors
+#	dynaprint
+#;
+
+#	: <install-dependencies>on <install-type>EXE
+#	: <location>libs ;

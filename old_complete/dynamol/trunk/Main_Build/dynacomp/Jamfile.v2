@@ -1,0 +1,12 @@
+exe dynacomp : [ glob *.cpp ] 
+#	../dynabase//libdynabase 
+	../dynatype//libdynatype 
+	../convert//libconvert
+;
+
+
+lib libdynacomp : [ glob *.cpp ] 
+		../dynabase//libdynabase  
+		../convert//libconvert 
+		: <link>static 
+;

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+##COMPILE THE HELP DIALOG
+uic minhelpdialog.ui -o minhelpdialog.h
+uic -impl minhelpdialog.h minhelpdialog.ui > minhelpdialog.cpp
+
+## COMPILE THE MIN DIALOG
+uic mintabdialog.ui -o mintabdialog.h
+uic -impl mintabdialog.h mintabdialog.ui > mintabdialog.cpp
+
+cp minhelpdialog.cpp ../../src
+cp minhelpdialog.h ../../src
+cp minhelpdialog.ui.h ../../src
+
+cp mintabdialog.h ../../src
+cp mintabdialog.cpp ../../src
+cp mintabdialog.ui.h ../../

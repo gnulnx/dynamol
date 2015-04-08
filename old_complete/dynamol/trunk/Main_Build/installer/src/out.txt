@@ -1,0 +1,2 @@
+test -d ../bin/ || mkdir -p ../bin/
+g++ -Wl,-rpath,/usr/lib/qt3//lib -static -o ../bin/installer installer.o main.o moc_installer.o   -L/usr/lib/qt3//lib -L/usr/X11R6/lib -lXft /usr/lib/qt3//lib/libqt-mt.a -L/usr/X11R6/lib /usr/X11R6/lib/libXmu.a /usr/X11R6/lib/libXrender.a /usr/X11R6/lib/libXrandr.a /usr/X11R6/lib/libXcursor.a /usr/X11R6/lib/libXinerama.a -lXft /usr/X11R6/lib/libSM.a  /usr/X11R6/lib/libICE.a -ldl /usr/X11R6/lib/libXext.a -lX11 -lm -lpthread

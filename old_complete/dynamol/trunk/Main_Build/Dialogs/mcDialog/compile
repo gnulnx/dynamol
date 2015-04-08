@@ -1,0 +1,13 @@
+#!/bin/sh
+
+uic mchelpdialog.ui -o mchelpdialog.h
+uic -impl mchelpdialog.h mchelpdialog.ui > mchelpdialog.cpp
+
+uic mcdialog.ui -o mcdialog.h
+uic -impl mcdialog.h mcdialog.ui > mcdialog.cpp
+
+cp mchelpdialog.h ../../src
+cp mchelpdialog.cpp ../../src
+cp mcdialog.h ../../src
+cp mcdialog.cpp ../../src
+cp mcdialog.ui.h ../../src

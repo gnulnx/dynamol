@@ -1,0 +1,14 @@
+## The Jamfile for the dynabase library ##
+## By Default it compiles both shared and static libraries
+## It also compiles the dynabase.exe program
+## In the future you will want to make sure it undergoes unit testing
+
+project dynabase 
+	: requirements
+	<define>"LINUX"
+;
+
+#exe dynabase : [ glob *.cpp ] ;
+lib libdynabase : [ glob *.cpp ] : <link>static ;
+#lib libdynabase : [ glob *.cpp ] : <link>shared ;
+

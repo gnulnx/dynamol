@@ -1,0 +1,10 @@
+#!/bin/sh
+
+uic colordialog.ui -o colordialog.h
+uic -impl colordialog.h colordialog.ui > colordialog.cpp
+
+cp colordialog.cpp ../../dynamol/
+cp colordialog.h ../../dynamol
+cp colordialog.ui.h ../../dynamol
+
+

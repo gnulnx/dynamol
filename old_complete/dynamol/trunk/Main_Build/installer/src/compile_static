@@ -1,0 +1,12 @@
+#!/bin/sh
+
+g++ -Wl,-rpath,$QTDIR/lib -o ../bin/installer installer.o main.o envprompt.o moc_installer.o moc_envprompt.o   -L/usr/lib/qt-3.4/ -L../../descriptors/src -L../../dynatype/src/ -L/usr/lib/qt-3.4/lib -L/usr/X11R6/lib -L/usr/X11R6/lib -L$QTDIR/lib -L/usr/X11R6/lib -L/usr/X11R6/lib /usr/lib/qt-3.4/lib/libqsa.a /usr/lib/qt-3.4/lib/libqt-mt.a /usr/X11R6/lib/libXrender.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXrandr.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXcursor.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXinerama.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXft.a /usr/lib/libfontconfig.a  /usr/X11R6/lib/libXrender.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXrandr.a /usr/lib/libfontconfig.a  /usr/X11R6/lib/libXcursor.a /usr/lib/libfontconfig.a /usr/X11R6/lib/libXinerama.a /usr/lib/libfreetype.a /usr/lib/libfontconfig.a  /usr/X11R6/lib/libSM.a /usr/X11R6/lib/libICE.a -ldl -lGLU -lGL /usr/X11R6/lib/libXmu.a /usr/X11R6/lib/libXext.a /usr/X11R6/lib/libX11.a -lm -lpthread /usr/lib/libexpat.a 
+
+#g++ -static -Wl,-rpath,$QTDIR//lib  -o ../bin/installer installer.o main.o moc_installer.o  -L$QTDIR//lib -L/usr/X11R6/lib  $QTDIR//lib/libqt-mt.a -L/usr/X11R6/lib /usr/X11R6/lib/libXmu.a  -ldl /usr/X11R6/lib/libXext.a -lX11 -lm -lpthread
+
+#g++ -Wl,-rpath,$QTDIR//lib  -o ../bin/installer installer.o main.o moc_installer.o  -L$QTDIR//lib -L/usr/X11R6/lib  -lXft $QTDIR//lib/libqt-mt.a -L/usr/X11R6/lib /usr/X11R6/lib/libXmu.a /usr/X11R6/lib/libXrender.a /usr/X11R6/lib/libXrandr.a /usr/X11R6/lib/libXcursor.a /usr/X11R6/lib/libXinerama.a -lXft /usr/X11R6/lib/libSM.a  /usr/X11R6/lib/libICE.a -ldl /usr/X11R6/lib/libXext.a -lX11 -lm -lpthread
+
+#++ -Wl,-rpath,$QTDIR//lib -o ../bin/installer installer.o main.o moc_installer.o /usr/X11R6/lib/libXrender.a $QTDIR/lib/libqsa.a $QTDIR/lib/libqt-mt.a /usr/X11R6/lib/libXrandr.a  /usr/X11R6/lib/libXinerama.a  /usr/lib/libfreetype.a  /usr/X11R6/lib/libSM.a /usr/X11R6/lib/libICE.a -ldl /usr/X11R6/lib/libXmu.a /usr/X11R6/lib/libXext.a /usr/X11R6/lib/libX11.a  -lpthread -L/usr/X11R6/lib -lXft /usr/X11R6/lib/libXcursor.a
+
+
+#g++ -Wl,-rpath -o ../bin/installer installer.o main.o moc_installer.o /usr/X11R6/lib/libXrender.a $QTDIR/lib/libqt-mt.a /usr/X11R6/lib/libXrandr.a  /usr/X11R6/lib/libXinerama.a  /usr/lib/libfreetype.a  /usr/X11R6/lib/libSM.a /usr/X11R6/lib/libICE.a -ldl -lGLU -lGL /usr/X11R6/lib/libXmu.a /usr/X11R6/lib/libXext.a /usr/X11R6/lib/libX11.a  -lpthread -L/usr/X11R6/lib -lXft /usr/X11R6/lib/libXcursor.a

@@ -1,0 +1,151 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>envprompt</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>envprompt</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>581</width>
+            <height>572</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Environment Variables</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>11</y>
+                <width>550</width>
+                <height>540</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="text">
+                    <string>Some environment variables need to be set in order for the Dynamol software to work.  If you are using the BASH shell then the installer can perform these functions for you.  The process involves modifying the .bash_profile and .bashrc files in each of the directories found in /home.  It also involves modifying the /etc/bashrc file.  All of the respective files will be backed up and saved  (ex.  .bashrc.backup)  before any modification is done.  You will also have to perform the install as root to have /etc/bashrc modified.
+
+If you choose to not have the installer do this for you then you will need to set  environment variables according to the following conventions.
+
+If you are using the BASH shell (check by typing 'echo $SHELL' at the command prompt) and you choose the following install path: /usr/local
+Then you would need to set the following variables
+
+export DYNAMOL=/usr/local/dynamol
+export PATH=$PATH:/usr/local/dynamol/bin
+
+It is reccomended that you append the above lines to the .bashrc and .bash_profile files in your home directories.  This will prevent you from having to reset these variables each time you login.
+
+If you are using a different shell then you will need to set the environment variables according to your shells specifications.  For instance if you are using the tcsh shell then you would replace the 'export' command with 'set env'</string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout3</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Check Box to Perform Auto Update</string>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>61</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </hbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout4</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonOk</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;OK</string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                        <property name="default">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer3</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>101</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </hbox>
+            </widget>
+        </vbox>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>envprompt</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

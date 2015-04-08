@@ -1,0 +1,45 @@
+#project
+    # Build for LINUX.
+#    : default-build <threading>multi <define>LINUX
+#    ;
+
+project
+    # Build for WINDOWS
+    : default-build <threading>multi <define>LINUX
+    <cxxflags>"-I./ -I../../Qt/3.3.5/include -I/usr/lib/qt-3.4/include -DQT_THREAD_SUPPORT -DLINUX -w"
+    ;
+
+
+import qt ;
+import python ;
+lib qsa : : <name>qsa ;
+lib dynapy : : <file>../embedd/bin/embedd/libdynapy.a/gcc/debug/libdynapy.a ;
+lib boost_python : : <file>/usr/lib/libboost_python.so ;
+lib python_lib : : <file>/usr/lib/libpython2.4.so ;
+
+exe dynamol : [ glob *.cpp ] [ glob *.h ] 
+	../dynabase//libdynabase
+	../convert//libconvert
+	../dynacomp//libdynacomp
+	../dynatype//libdynatype
+	../descriptors//libdesc
+	../dynaprint//libdynaprint
+   dynapy
+   boost_python
+   python_lib
+	qsa
+;
+
+#lib libdynamol : [ glob *.cpp ]  
+#      ../dynabase//libdynabase
+#      ../convert//libconvert
+#      ../dynatype//libdynatype
+#      ../descriptors//libdesc
+#      ../dynaprint//libdynaprint
+#      dynapy
+#      boost_python
+#      python_lib
+#      qsa
+#      : <link>static
+#;
+

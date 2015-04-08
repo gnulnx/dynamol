@@ -1,0 +1,5 @@
+
+exe dynatype : [ glob *.cpp ] ../dynabase//libdynabase ;
+lib libdynatype : [ glob *.cpp ] ../dynabase//libdynabase : <link>static ;
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>gafffpHelp</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>gafffpHelp</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>505</width>
+            <height>448</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Help</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>Layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Done</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTextEdit" row="0" column="0">
+            <property name="name">
+                <cstring>textEdit1</cstring>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+            <property name="text">
+                <string>For a complete introduction to the gaff atom environment fingerprints please consult the user manual.  This help dialog only covers the options present in the dialog box
+
+&lt;BR&gt;&lt;BR&gt;
+&lt;b&gt;Step 1.  Building the Fingerprints&lt;/b&gt;
+&lt;BR&gt;
+
+Before any similarity calculation can be performed fingerprint files must be constructed.  Fingerprint files are constructed by providing a set of molecules in the (*.sdf) file format.  All molecule should be in 3D with hydrogens added.  
+&lt;BR&gt;
+If you are going to screen against a local set of compounds then you should calculate a fingerprint file for those compounds as well.  
+&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Note:  The non-commercial version of dynamol limits local searches to fingerprint files of less than 100,000 entries.  The commercial version does not limit you in any way.  Visit http://www.dynamol.com to inquire about a commercial license.&lt;/i&gt;
+
+&lt;BR&gt;
+&lt;BR&gt;
+&lt;b&gt;Step 2.  Testing Model&lt;/b&gt;
+&lt;BR&gt;
+As mentioned in the gafffp theory section of the user manual there are two basic parameters that can be manipulated.  The maximum number of selected descriptors and the minimum occurrence probability of selected descriptors in the training set.  It is a good idea to test these parameters on a small subset first.  Dynamol has provided a diverse set of 1000 fingerprints ($DYNAMOL/FingerPrint/div.fp).  There is no guarantee that the best parameters used on the diverse set will be the best on the final set.  However, experience shows that a max of 40 descriptors and a 10% minimum occurrence probability works well for a wide variety of datasets. 
+&lt;BR&gt;&lt;BR&gt;
+To test the parameters provide both training and test set fingerprint files (*.fp) and set the adjustable parameters.  When you hit the test model button Dynamol will build a model on the training set supplied and will return the hit rate of the test set.  Note:  The hit rate is the percentage of test set compounds found in the top 100 returned results.  Obviously the more compounds screened the lower the expected hit rate.  
+
+&lt;BR&gt;&lt;BR&gt;
+&lt;b&gt;Step 3.  Screen for Hits&lt;/b&gt;
+The final step is to screen a database for new compounds.  There are two basic modes of operation.  The first option is to screen a local database of compounds for which you have built a fingerprint file.
+&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Note:  The non-commercial version of dynamol limits local searches to fingerprint files of less than 100,000 entries.  The commercial version does not limit you in any way.  Visit http://www.dynamol.com to inquire about a commercial license.&lt;/i&gt;
+&lt;BR&gt;&lt;BR&gt;
+The second mode of operation is to screen a large database of commercially available compounds from the Dynamol Servers (~1.8 million).  At this time the database is a subset of chemically unique compounds from the ZINC database.  In order to screen the ZINC database a commercial license is required.
+
+&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Note: ZINC is a free database of commercially available compounds that John Irwin and Brain Schoicet are maintaining.  For more information on the ZINC database go to http://blaster.docking.org/zinc/
+&lt;br&gt;&lt;br&gt;
+You might also want to check out: &lt;br&gt;
+Irwin and Shoichet, J. Chem. Inf. Model. 2005;45(1):177-82&lt;/i&gt; </string>
+            </property>
+            <property name="wordWrap">
+                <enum>WidgetWidth</enum>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>gafffpHelp</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,6 @@
+
+#lib dynabase : : <name>dynabase ;
+#lib dynacomp : : <name>dynacomp ;
+
+lib libconvert : [ glob *.cpp ] ../dynatype//libdynatype  : <link>static ;
+#lib libconvert : [ glob *.cpp ] ../dynatype//libdynatype  : <link>shared ;

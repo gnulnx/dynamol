@@ -1,0 +1,33 @@
+project Main_Build : default-build
+        <threading>multi
+	<define>"Linux"
+;
+
+#project descriptors 
+#	: requirements
+#	<threading>multi
+#	<include>"Hello_from_jamroot_2"
+#	<include>"/usr/lib/qt-3.4/include"
+#	<define>"QT_THREAD_SUPPORT"
+#	<cxxflags>"-w"
+#	: default-build release
+#;
+
+#build-project all ;
+#build-project descriptors ;
+#build-project dynabase ;
+build-project Main_Build ;
+
+#install ../dynamol/bin/dynamol-linux : dynamol ;
+
+#install libs : 
+#	dynabase
+#	convert
+#	dynatype
+#	dynacomp
+#	descriptors
+#	dynaprint
+#;
+
+#	: <install-dependencies>on <install-type>EXE
+#	: <location>libs ;

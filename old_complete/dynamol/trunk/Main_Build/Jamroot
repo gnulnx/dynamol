@@ -1,0 +1,15 @@
+project
+    # built MT version, unless asked otherwise.
+    : default-build
+        <threading>multi
+        <define>LINUX
+#	<cxxflags>"-I./ -I../../Qt/3.3.5/include -DQT_THREAD_SUPPORT -DLINUX"
+	<cxxflags>"-I./ -I/usr/lib/qt-3.4/include -DQT_THREAD_SUPPORT -DLINUX -w"
+;
+
+build-project dynamol ;
+#build-project dynatype ;
+
+install ../dynamol/bin/ : dynamol ;
+#	: <install-dependencies>on <install-type>EXE
+#	: <location>libs ;

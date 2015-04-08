@@ -1,0 +1,562 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>colorDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>colorDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>342</width>
+            <height>393</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Atom Color Diaog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QButtonGroup" row="0" column="0">
+            <property name="name">
+                <cstring>buttonGroup1</cstring>
+            </property>
+            <property name="title">
+                <string>Pre-Defined</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout28</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#ffaa00"&gt;C&lt;/font&gt;&lt;font color="#fe7fbe"&gt;O&lt;/font&gt;&lt;font color="#0055ff"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#aa0000"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#10da3c"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#3ba3f8"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffaa7f"&gt;S&lt;/font&gt;&lt;font color="#ffff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label3</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#ffff7f"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#3ba3f8"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffaa00"&gt;S&lt;/font&gt;&lt;font color="#aa0000"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton3</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label4</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#f373ff"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#3ba3f8"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#aa0000"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton4</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label5</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#aa55ff"&gt;C&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#3ba3f8"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#aa0000"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton5</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label6</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#ffaa00"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#0055ff"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffff7f"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton6</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label7</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#2ecece"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#0055ff"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffff7f"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton7</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2_2_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label8</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#bbcceb"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#0055ff"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffff7f"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton8</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout19_2_2_2_2_2_2_2_2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label9</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;tt&gt;&lt;b&gt;&lt;font color="#97aca2"&gt;C&lt;/font&gt;&lt;font color="#e60000"&gt;O&lt;/font&gt;&lt;font color="#0055ff"&gt;N&lt;/font&gt;&lt;font color="#ffffff"&gt;H&lt;/font&gt;&lt;font color="#ffff7f"&gt;S&lt;/font&gt;&lt;font color="#55ff7f"&gt;P&lt;/font&gt;&lt;/b&gt;&lt;/tt&gt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton9</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                    </vbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="0" column="1">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>Custom</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout16</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout15</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label10</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#ffaa00"&gt;C&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label11</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#ff5500"&gt;O&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label12</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#0055ff"&gt;N&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label13</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#ffffff"&gt;H&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label14</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#ffff00"&gt;S&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label15</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#55ff00"&gt;P&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>Label16</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;font color="#b1aeaf"&gt;X&lt;&lt;/font&gt;</string>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout14</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton10</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton11</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton12</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton13</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton14</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton15</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>pushButton16</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Select</string>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_1_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_2_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton3</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_3_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton4</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_4_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton5</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_5_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton6</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_6_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton7</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_7_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton8</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_8_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton9</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>cs_9_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton10</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_1_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton11</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_2_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton12</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_3_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton13</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_4_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton14</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_5_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton15</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_6_Slot()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton16</sender>
+        <signal>clicked()</signal>
+        <receiver>colorDialog</receiver>
+        <slot>us_7_Slot()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in declaration">qstring.h</include>
+    <include location="local" impldecl="in implementation">colordialog.ui.h</include>
+</includes>
+<signals>
+    <signal>colorChange(QString C, QString O, QString N, QString H, QString S, QString P)</signal>
+</signals>
+<slots>
+    <slot>cs_1_Slot()</slot>
+    <slot>cs_2_Slot()</slot>
+    <slot>cs_3_Slot()</slot>
+    <slot>cs_4_Slot()</slot>
+    <slot>cs_5_Slot()</slot>
+    <slot>cs_6_Slot()</slot>
+    <slot>cs_7_Slot()</slot>
+    <slot>cs_8_Slot()</slot>
+    <slot>cs_9_Slot()</slot>
+    <slot>us_1_Slot()</slot>
+    <slot>us_2_Slot()</slot>
+    <slot>us_3_Slot()</slot>
+    <slot>us_4_Slot()</slot>
+    <slot>us_5_Slot()</slot>
+    <slot>us_6_Slot()</slot>
+    <slot>us_7_Slot()</slot>
+    <slot>us_8_Slot()</slot>
+    <slot>us_9_Slot()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

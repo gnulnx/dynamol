@@ -1,0 +1,15 @@
+#!/bin/sh
+
+uic flexaligndialog.ui -o flexaligndialog.h
+uic -impl flexaligndialog.h flexaligndialog.ui > flexaligndialog.cpp
+
+uic fcdialog.ui -o fcdialog.h
+uic -impl fcdialog.h fcdialog.ui > fcdialog.cpp
+
+cp flexaligndialog.h ../../dynamol/
+cp flexaligndialog.cpp ../../dynamol/
+cp flexaligndialog.ui.h ../../dynamol/
+
+cp fcdialog.h ../../dynamol/
+cp fcdialog.ui.h ../../dynamol/
+cp fcdialog.cpp ../../dynamol/

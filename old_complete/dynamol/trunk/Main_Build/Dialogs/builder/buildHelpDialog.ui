@@ -1,0 +1,86 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>buildHelpDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>buildHelpDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>406</width>
+            <height>815</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Build Help</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>Layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Done</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTextEdit" row="0" column="0">
+            <property name="name">
+                <cstring>textEdit1</cstring>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+            <property name="text">
+                <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:14pt;font-family:Helvetica"&gt;
+&lt;p&gt;The Dynamol build utility is designed to be as intuitive as possible. There are three basic modes of operation. &lt;br /&gt;&lt;br /&gt;1) Build Mode. &lt;br /&gt;2) Retype Mode. &lt;br /&gt;3) Delete Mode. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:21pt;font-weight:600"&gt;Build Mode&lt;/span&gt; &lt;br /&gt;Build mode had two modes of operation. &lt;br /&gt;&lt;br /&gt;1) Sketch Mode.&lt;br /&gt;2) Ring Mode.&lt;br /&gt;&lt;br /&gt;&lt;span style="font-weight:600"&gt;Sketch Mode&lt;/span&gt;&lt;br /&gt;While in sketch mode the user selects an atom and a bond type and then simply points and clicks to add a new atom. While in sketch mode you can cycle through single/double/triple bond orders by clicking on a bond. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-weight:600"&gt;Ring Mode&lt;/span&gt;&lt;br /&gt;Ring mode allows the user to add a set of predetermined rings to the system. To enter ring mode simply click on one of the rings and then point to the atom or bond that you would like to add the ring. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:21pt;font-weight:600"&gt;Retype Mode &lt;/span&gt;&lt;br /&gt;Retype mode allows the user to change atom types. Simply select a new atom type and then click on the atom you want to change. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:21pt;font-weight:600"&gt;Delete Mode&lt;/span&gt;&lt;br /&gt;While in delete mode the user may point and click at individual atoms to delete. If many deletions are required then you may find it beneficial to close out the builder and perform the deletions in the regular view mode.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
+            </property>
+            <property name="wordWrap">
+                <enum>WidgetWidth</enum>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>buildHelpDialog</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

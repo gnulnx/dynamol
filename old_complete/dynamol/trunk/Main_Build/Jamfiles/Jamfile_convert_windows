@@ -1,0 +1,9 @@
+project	
+	: requirements
+	<define>"WINDOWS"
+;
+
+lib libconvert : [ glob *.cpp ] 
+	../dynatype//libdynatype  
+	: <link>static 
+;

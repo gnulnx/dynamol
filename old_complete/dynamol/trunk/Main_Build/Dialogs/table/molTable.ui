@@ -1,0 +1,684 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>molTable</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>molTable</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>484</width>
+            <height>642</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>molTable</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTable" row="0" column="0">
+            <column>
+                <property name="text">
+                    <string>Molecule</string>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>table1</cstring>
+            </property>
+            <property name="numRows">
+                <number>0</number>
+            </property>
+            <property name="numCols">
+                <number>1</number>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <action name="fileOpenAction"/>
+        <action name="fileExportAction"/>
+        <item text="Export" name="popupMenu_2" accel="">
+            <action name="fileExportSDFAction"/>
+            <action name="fileExporttextAction"/>
+        </item>
+        <separator/>
+        <action name="fileSaveAction"/>
+        <action name="fileSaveAsAction"/>
+        <separator/>
+    </item>
+    <item text="&amp;Edit" name="editMenu">
+        <action name="editUndoAction"/>
+        <action name="editRedoAction"/>
+        <separator/>
+        <action name="editCutAction"/>
+        <action name="editCopyAction"/>
+        <action name="editPasteAction"/>
+        <separator/>
+    </item>
+    <item text="View" name="View">
+        <action name="viewselectedAction"/>
+        <action name="viewunselectedAction"/>
+    </item>
+    <item text="Calculate" name="Calculate">
+        <action name="calculateDescriptorsAction"/>
+    </item>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>toolBar</cstring>
+        </property>
+        <property name="label">
+            <string>Tools</string>
+        </property>
+        <action name="fileNewAction"/>
+        <action name="fileOpenAction"/>
+        <action name="fileSaveAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>Toolbar</cstring>
+        </property>
+        <property name="label">
+            <string>Toolbar</string>
+        </property>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>toolButton1</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>image0</iconset>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>toolButton3</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>image1</iconset>
+            </property>
+        </widget>
+    </toolbar>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image2</iconset>
+        </property>
+        <property name="text">
+            <string>New</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;New</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image3</iconset>
+        </property>
+        <property name="text">
+            <string>&amp;Import</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Import</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image4</iconset>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Save As</string>
+        </property>
+        <property name="menuText">
+            <string>Save &amp;As...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filePrintAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image5</iconset>
+        </property>
+        <property name="text">
+            <string>Print</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Print...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editUndoAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image6</iconset>
+        </property>
+        <property name="text">
+            <string>Undo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Undo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editRedoAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image7</iconset>
+        </property>
+        <property name="text">
+            <string>Redo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Redo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Y</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCutAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image8</iconset>
+        </property>
+        <property name="text">
+            <string>Cut</string>
+        </property>
+        <property name="menuText">
+            <string>Cu&amp;t</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+X</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCopyAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image9</iconset>
+        </property>
+        <property name="text">
+            <string>Copy</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Copy</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+C</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editPasteAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image10</iconset>
+        </property>
+        <property name="text">
+            <string>Paste</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Paste</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+V</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editFindAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image11</iconset>
+        </property>
+        <property name="text">
+            <string>Find</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Find...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+F</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpContentsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Contents</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Contents...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpIndexAction</cstring>
+        </property>
+        <property name="text">
+            <string>Index</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Index...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>About</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;About</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>calculateDescriptorsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Descriptors</string>
+        </property>
+        <property name="menuText">
+            <string>Descriptors</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filetestAction</cstring>
+        </property>
+        <property name="text">
+            <string>test</string>
+        </property>
+        <property name="menuText">
+            <string>test</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewselectedAction</cstring>
+        </property>
+        <property name="text">
+            <string>Selected</string>
+        </property>
+        <property name="menuText">
+            <string>Selected</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewunselectedAction</cstring>
+        </property>
+        <property name="text">
+            <string>Unselected</string>
+        </property>
+        <property name="menuText">
+            <string>Unselected</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExportAction</cstring>
+        </property>
+        <property name="text">
+            <string>Export</string>
+        </property>
+        <property name="menuText">
+            <string>Export</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExportSDFAction</cstring>
+        </property>
+        <property name="text">
+            <string>SDF</string>
+        </property>
+        <property name="menuText">
+            <string>SDF</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExporttextAction</cstring>
+        </property>
+        <property name="text">
+            <string>Text</string>
+        </property>
+        <property name="menuText">
+            <string>Text</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>calculateFingerPrintsAction</cstring>
+        </property>
+        <property name="text">
+            <string>FingerPrints</string>
+        </property>
+        <property name="menuText">
+            <string>FingerPrints</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>calculateFingerPrintsgaffFPAction</cstring>
+        </property>
+        <property name="text">
+            <string>gaffFP</string>
+        </property>
+        <property name="menuText">
+            <string>gaffFP</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewNextAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image1</iconset>
+        </property>
+        <property name="text">
+            <string>Next</string>
+        </property>
+        <property name="menuText">
+            <string>Next</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewPrevAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image12</iconset>
+        </property>
+        <property name="text">
+            <string>Prev</string>
+        </property>
+        <property name="menuText">
+            <string>Prev</string>
+        </property>
+    </action>
+</actions>
+<images>
+    <image name="image0">
+        <data format="PNG" length="668">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000026349444154789cb5944d4f135114869fa1d3ce47e99714da81296345b00410305db8700121291b362626a889616bba62e76fd0c49dc6a56bff805b16242e5cba425d981825c650f9ea0794d2eba2772a301d291adee4666e32739e73ee7bcf1c4508c165a8e752a880faaf818aa228b40a0b000268024d212db870c54a4b2aa001516005a8038d533c2144570b50e4097520013c96958afeb18c90fb50fbfbff019a4ebf7056e6c4ea9be72e5807142184bfc7d2c380841ac032f00aa0373b407a618a7acaa054d9a554dd6987b91b0ff86fc0e8481a7b7186e3c130dbd53d8e1a15829a4a4f30e0294ced06181fb5c82ee5211361bbba4fa35925a4ab8464b8ae05bde0136d133c0beccbd98cddbd8d9a8db353dba7d1ac6384355a0df147baa17156aaacd2041eb681e3434c3f9843bfdec7ee61997af308b357f704bb320def3bf7d88f80170083f339fa6f39ec890acd030d33e20f7465989d2b568175e029f064736d83ed0fdf48dcb0b892b3488ca6498ca608450dff8acdce15378032f016780f2cd44ae562eddd67763efd20393e4475d226991b2499b3d06266d756d4802d996057ae3560bebab55ffcbabe41e9e326a9c90ce52f0e031336a9091b3d1e3e618517acc875b22b22b4feb0a47cce034580482a8635ed60cf66b16e3a5853c318893013c635ee2717a1d504074208a1b8f3b8431ffb2688a6e3d8b35932f911ec99ab140a0596238553e06e66c330300d2c00f78097c85911b312626a292f9efd7cedce0a03392b2e327c7c1338f9110fb86d859fceb1280edc0156dd7b040e4f797c9e7c12c4e5f300f80efc1242d469fb71017548a003c74085d6c51d03fc068fd919ae1973b8c30000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="672">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000026749444154789cb594cb4f13511487bfdb4e3bd396163042505462aa2e8c89313171656264634cdcb934c144173e16ead23fc10413173e96262e34acdcb8324130ba203e8220842a12280c0cc596297d4c2b16ae0b6670c2146c319ce426373973bfdfef9cb9f70829253b11be1da1028ab31142085bc8070860055895db2cc9b7615f0196812e2006a84208c516ad2fa494d8a682806c39b25f02ceba0634031a6bd509e7fb7f2d072aecc3f276cf7dd9d17546863b5afe4bc0dd0a0190b1b2649a57d87de91487ae76d270b015e009b0085c06a2b5b4c8732b7c013f0155215f29926bf5d17ee534476f9c23166fab4bc003d6d40091884624a211d4148aab16d6de00f19b673971e7024d87f7d42420a494ce55d300ebd6ab6e5e8f0f542d4ff1f9690a45a94c66f9fe72804c427752d7811ea004fc06563de0bbbd0f7933f571b3d6ad0b34aa0d947f64187ad14f666cd62df01cb0948d87426195582cb22518c0ca1728c822fbce1f436d8b32d797705ae4079e79c0e1b0466363c3a6c0e55c09733c85393ecf62c2c0fc6650ca149cf43de01da078c121adaae35f4b16e984413a31c7cf119df4d82c563aefa41f03bd401a2800952aadd08855fe3a2e678ba446751646758ce124a991198a0b3937b00f306da80964819217ac0589ca3025b388f1751a6338893e38893194249f5ada0a98c7752b3c60a10ae6de4ea07f9962e6d304fae024b9f96c2dc00ab0e24c430f38599ae5c3d37ea63f4fb064987503d7c335844280ec3819770f9f47c045a013380e1ca0c661e47e20aaed00e001f0defe11b539dcd852272f840802bb8076db51de06d705ac06f6dbc0086bafa7bc1da0137f0096d56b8ed04a4ec10000000049454e44ae426082</data>
+    </image>
+    <image name="image2">
+        <data format="PNG" length="359">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000012e49444154789ccdd53baa84301406e0df1736626beb0a848030a0bdcb722bee23b5ba102b1bb11122219aa91c7cc449e682700fa4484cbe9c9c285a6ddbe289b01f5101b8e7014aa9d42d2a8ac2fa190680b22c0f7d29251863e8ba0e9452504aa50e5796424aa96c00104511b22cd39eec165ed7f5d0f61ba4698ad7ebf51557c26768bf110070ce4108419aa6b7f82dac6a5b70cec13947922420842871e5e5ed6bbaf501c0b22c789e87711c3fcfe2380663ec72a14a782bc5397cdfc7344da8eb1acbb27cc6851097b9c6b06ddb088200799e83317698330c039aa6f91b2ca584effb701c0761182a4fa485b7b740b9c0752fa8eb5e1925bc2c8b36a3732246f0b78c55a19a7b5be35f60e38cff0d6c5c8af397a70be38c8510e8fbde189ee7d90caeaaca18bd0beba99fe91ba504120f8c5366580000000049454e44ae426082</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="966">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000038d49444154789cb5954d4c9c5514869ffb31c0d00a2dc652c456db12896063525968262c1a0213b1330b08c1c41f5aa7818584849a56034a8c65e1ca3a51c1184c8cc406052420849f6161037a13376e4883a649254541a1963838f3fdcdf75d17644670c0d6bfb33b37f73eef396fee3d574829f93f42db9af87c3ee5f3f9d46ef9df09cf9f1706070749c25e193949f4fac3a95c4a29fe31b8b6b616dbb6191e1ea6b5ed34ab8b57e89aac67f5da5e820d27d5fa8ac5977352dc4e2c0d6c59164a29028100c1e02d464646686d3ac3fa8ac5ebe39b020d67abd485814731564b76ed464829d9ea635f5f1fc160f08f0d42208460747494c6c64600cef59792bfbf0cc3584337d670361ee0ede629b60a08409d7eb591cc3d713ee81802a0b7b7974020b0ad1321049aa6313e3e4e281402a0f5520bb947e70150cae1b79f0a79e785cf90520a0f80633b141cfb8197062a589b2fa6a9a909809e9e1e6a6a6ab609545656b2b4b4c4e4e424cdcdcd2981bc6357c92bfa25dd8af3fd8f81809ccca32891e0c7f94c3e7cad1f8070388cdfef4febc0e3f1108944686969a1e08897b397ca79a3ee2ba49422758f6f7c7d18a540b76e60dbebe4972cd03e748ae6379fa0adad8db2b232c6c6c6d0751d5dd789c7e344a3517c3e1f333333ac2e1a241c3325ac250d1f080f21dc1c1cd6715c03f060dacbe416dde4c2278f13ba584f7bc7cb949797333131911288c5622c2f2fa77cde064ec6b5d93c84bb0f8ffd204a9908b27089a1501c7c48a7fdd33a9ebf58476767271515154c4f4fa3eb3aa699ac54a483a59462f4fdcf51562ea67615611fc055061ef7308edac071749c84ce7da55e3a879ea2b1e339bababab681bdd9f7ec5c31c0c2150d65dd85b2f2c11524b425b44411caf1a2dc1c9c8449ccbe4ec123df01a0eb3a866100605ab776064b29c5d447d384435fb030b7814ae482ebc1751324b889ad96b19d0d34771f19aa1080d9d9594cd3a4e08877778f937029a598ea8b103e33c7c274218e99838a1f422913c735c13a88b2b368783148777737a669b2ba68e0cd3e90e2a4cd8aad02b0393aa7fac0ffac9fd2aa6c8416c7610dd7c9e0fee37703303fbff9fa62f1a5db837712887c0cfe67aa2939518c96132563cf0af5e7aa197a6b042d63fbb9342bfe4a404a2922976778f7fc7b7c2b7fc631b33874e2574e859e24ffde2cbcde3bb0e28e3ab80cd54f57713cf83d25d5c52c7ee3a6f6897ffbe72547eedefd9b35ce4ccc8aff04bc5bfc0efe85c03dbf1a6b860000000049454e44ae426082</data>
+    </image>
+    <image name="image4">
+        <data format="PNG" length="765">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000002c449444154789cb595cb6b13411cc73fb3bb936d349bb4495b8d7df95cc4c7c19bec41aa17f1ead59b20855e44f01f50fc03d45bee0a423d087af35204731344ab42c5576aedd626b1a9b179ec633cd86ebada4aadfa858599f9311f3e333bcc8862b1c8ff88b1da387bee94ca0d99bc7854fb2b60b15814001a80e338eac20d1bfb648052ea8fbf8989092eddb6397f338fe3382a02034c3d79cba1637bb66419281f5dd7e9cf774763064026af611f19a4ecce4785b1b1b10d41854221aa170a05003e7d70e9ce9a71706d2ea4d568b3b4e8e1051e5297d184dfc157a30b8303878769345a80db01f70ceaf87e8be17d3b08431f74f947c681f269365abc9efa18373634899449bed53d4c99fcc56833c68b950afb0f0f032f3be0855213cff74044a72f66bcd6703d6380eede1dd4eb2a6e0ca0020f9930629337325caf3ffdfc3df6d191a8af01081d64a28b6a798920f400a87ea96eb80d00b55a0dcff728cd940018b10728cfcdc68dd37d1aad5683de7c8e3b776f6188249e5a468a6d043409c2168648a1091d7d65bb96daf36c973914011a3abed7a2fe558b8305a06902dff779307b99fc500e10b83365f2c359dacd65c2500210f8cba43219de4ebbd84786989e9a61efc10154d066b73d08543be04537a45a6ed0db2f78785d50715faf597495013b493a27f9e2b671df35818595da2b008e9d6873fa620f0b9f4a716380ee6c966d561715f705e3e3e398a6c966924ea7b97aed0af6992c23fb76a21bb538d84828dc8f15ac3e0dd334c96432eb82262727a3f6e8e828966561f569f40feda4d96c93ddf543283a1509b30bab2745bd126ecaf4e784a1607eb6ca42a9d901a7721a9af051de326a0b5c15421878647a3bb79b06f0f57348ad5a23446ec936659968e1379289443466c08f5bdf711ce59c3f0e7c209d4e6359d6ba90b53fd5b22ca494ccbd69f0f87e8ea7f79e452f8858fbe6addefe5bcd2af417f0bfcc77f591440366d68e8b0000000049454e44ae426082</data>
+    </image>
+    <image name="image5">
+        <data format="PNG" length="230">89504e470d0a1a0a0000000d49484452000000100000000e0806000000262f9c8a000000ad49444154789c95535b0ec2300cb311a78ab40f762de06ae363c81c2b7cb4097baf58aa12554d9c3a0925610933f3d5e502920800d7ad60f7e37892e9af126c3d0ab83b4826fb2ac194fdac8ac30a8ed88308283a5cf6d89727a05169cdcc51bbe02d47a3661680b35e34fdd73a2bcc13cb9ae92f04a1755644dcab60780de9f7b73e83b21a89bb730000f7e723fdcffb471249024d02624b4c09944a3b5a849c8958a791b14c2d0b14988ef2174eb39094b690ead90000000049454e44ae426082</data>
+    </image>
+    <image name="image6">
+        <data format="PNG" length="172">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000007349444154789ced92c10e80200840b1ef661d1cff4d876aa888a17669f9360f283ed80060f159425f3a71f53602e08e992b098801d02854176ae47f21ce1fb5b05d38eddc9060d0f11379635b3bc92bd518e239a943ec1d5ab7785cee107be4b215af4091f894de47181ecea59ede9ec59f380062ac28b10fe74fef0000000049454e44ae426082</data>
+    </image>
+    <image name="image7">
+        <data format="PNG" length="173">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000007449444154789ced92c10ac02008406ddf2d3b84ffed0ea3586a26d165e0830ea53e8504487e4b910f5489f19ea5a3ca0f8a896365b306c42dd613c649bdc2598316136219f0f936c0a2ef00d75a62614d3ab22996f2a362ffa337c5ebede962aad1a2e84aaaa2f750dd12748c0fd0ab9324677800596e28b1bb69e3510000000049454e44ae426082</data>
+    </image>
+    <image name="image8">
+        <data format="PNG" length="187">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000008249444154789ccdd341128020080550e8e02ebc38ad3273503e48537fe3e48c4f2425fa28e29c6f39920bf9276cb60185358877611388c2576418cda015f520b4e6b55be109dc0622b8e22acf31056e18dfdff80606aa551cc63564c4dcf80cd0201d577a5c85a8845fdc025ea5307afccd07e23a1df283ec2b37d9ad5fb4dfefd49cfbf72facb651b89d0000000049454e44ae426082</data>
+    </image>
+    <image name="image9">
+        <data format="PNG" length="248">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000bf49444154789cd593410a83301045df488ee51dbc8c3ba98bf46a9eabd385350d266362444a3f0c4266fcf3f824f06f12402b66da8c55f3de2212cf9d92cb98c0ba2d7c4544cf9a07638bbad53c4491235ecf7cc1623697a92540c11ff4fda75275015d24a9389e7d6f53df4fe4ccab323eea0f03c0c4b2a0712ce6add89b59b7661c3be095985f261679ee4ebcc22c9788551fe6a2cbc4969a894bcb6f23ee361aab62e252c57294dfbfb610bbf2c897b8a46cc6677eaa519571fa087ea83762da9aba45b637520000000049454e44ae426082</data>
+    </image>
+    <image name="image10">
+        <data format="PNG" length="270">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000d549444154789cc5955d0a84300c8427e2a90a9e6c8b0f4b3dd982d7ca3e58d7fe4cd0ba5d7640024df265da0a057e2439c9eb8d9eaa8841a0c9aad8c82ab32f9c425be1e30e0dcf00c00308f0b3a7a07410a9d7142e00b42c5a5fab696b979b1c837fc0c316b6e4165b64f78d716359919bdc4570de47c04732dd5e5bcc35f0c97762ae787936dccf7513577e79f48c4b27aa0f1327b240f5117fcbe348aa33b6e0224b054d0746b8025e2e3b3e73cde0dd1c97f02e8ed9d0af1db381224bdf33eee698a934a0f617b45540d00bcf4ca08fc0dff406e325c198b16b67fb0000000049454e44ae426082</data>
+    </image>
+    <image name="image11">
+        <data format="PNG" length="662">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000025d49444154789cd593a172db4010863f670a56ecc42278d0653693a0c21c68d6c2e60df21a818111349499c254a8329b55f0e089ddb15ba602b79d6692d699b6d399fee86e67e7db7f77efe07fd3e2c74bd775b3730eef3d5115002382b5166b2d5757578b1729bf02b76d3b0f8703b92d58aed7600400ef1ce3c70306a8aa8aebebeb57c117dfa06ddb525dd754efb600a82a49138a123532ec3ac42b9bcde655ce2ffabe9f87c340fde13dcb4d8daaa24e48ee12c6823808c107969b1a8a9ce3f1f8aa515c38e7c8ada5aa6b00c45f129c67d223938c88e6c860d118b1d592d139baae9bcf83a78965b5465134801b1d2e1f4945c0e350096408ea154490c2e0bd3fef5853c2e486a0019f4d84f58418418362b0408e8b23c924501093314dd359f01b809814112025144015f1964c0bbc1b484b07e4688880c029ebd78e4141f5b434fd76864c053f1e084b0f8580265440634044ce838bbcc03987a61350a3a2285e1d5a4414d0708aa598082162ad3d0fb6d6e287cfa498508d274050447370428c91af8d10fd4481608c390b5e00dcddddcd8e80a9de420248e804840856f03e02907d729465c9ba5ae3468731e6a79fe50260b55a6102c4ee40a6894c33f2cb0cb106512814f8f899b22cb9b9b959b8d1f1f8f848d334b46dfbe29bfe5eadeffbf9783c323a871881ecb4200d1151a8eb9aed76bb00188661eeba8efd7e8f3186ed76cb6ab57ae2fe591b5dd7cdde7b628c8808799e63ada5aaaa67b9bbdd6e6e9a06ef3d755d3f29fec7eafb7ebebdbd9dadb5735996f3fdfdfdfca2e3dfd5c3c3c3dc340dd334b1d96cfe1e184e63dceff7a494fe26f61fe90bbc4c5e59b8ac895e0000000049454e44ae426082</data>
+    </image>
+    <image name="image12">
+        <data format="PNG" length="797">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000002e449444154789cad944b48546118869f7fae397969a2689129412dd4d028238240c1559b82e8028615045d17b56d1145d2a245105d2182c4c0126b51508ba026ba823ad73326b548b4a9c9eb1935472bf56b3167a6398e4d657d70e05c9ff73ddff7ff2f22c2bf1ec036400049ddfb1fc0aad242f16c756582010558013be030ced56f81ab8ac473a656a4f9b0bcaccd35816d24ca024c1ae7fb813bc0b8526a129892a4ba52db8096aa8ae59cda534375c92218fe00fd6d3c1974025f200d88e190c5e5eb01ae0143c05e200f702aa56c4aa9ed40cbc95d6b787a6e33d5250ac63a602a026e17e4e731b314300f9063af7aa4f8e40d7195564a7218c041c06dbcb31390d52bdc52bfaf5cfcd737c9c8c3ed224f6ba57e5fb9b9c7063807903acf7bc96df049d1ad90ac38dd20b965ebb20a94ad5c24f5c7368affde6e3971648309acd21cc7f73cebe27e4f0c00bb45e176dab0bef51269bac448b82df987878066601cd802dc2e2b59c2da8a421a6f7b111195749b021f78ddcd838fc3a63ed92c0ab7c30a9d5eba6e5e24166afda50009cb99e0a3de1e1e454732860060538a050e2b931dedbcbb7181c1e0ac02df816931e829f0712dc293bed159c1e90205762b135a1bc16be7190c98049a803830654bff28c76121df65cd0a06880feb7c5142e18e3a9c4b97f1e9c15d80ab24966d231037815d4e0b0559c0df6231f44e0dfd4d98a15000bd4363bcbf37f9f82cf01cb0012a033c9be3af319d81709881b0467fc0cf801622de97025e011e030324b6de242099adc8b1a4ae27749dde90469fa611f5f9e90d0619eb35013d806e407520466288d366b0dd429e58191fd2890643448321225e1f517f90d1cf5981a3cc581526b0b2c327cf7322fe201fda7c447c0146a27f0434851546a353d53d3644ebf5067ada030c473fcf0968328a9115c595abd3b3e13289dcad012a80227e66858d2c799d9e154ec301c079e0853188bf7268722b2228a51cc04260a9e168d400ff357026d86a00e793d83d13730526eb077e7e184c6e9bb11e0000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>fileNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>fileNew()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>fileOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>fileSave()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAsAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>fileSaveAs()</slot>
+    </connection>
+    <connection>
+        <sender>filePrintAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>filePrint()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>editUndoAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editUndo()</slot>
+    </connection>
+    <connection>
+        <sender>editRedoAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editRedo()</slot>
+    </connection>
+    <connection>
+        <sender>editCutAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editCut()</slot>
+    </connection>
+    <connection>
+        <sender>editCopyAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editCopy()</slot>
+    </connection>
+    <connection>
+        <sender>editPasteAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editPaste()</slot>
+    </connection>
+    <connection>
+        <sender>editFindAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>editFind()</slot>
+    </connection>
+    <connection>
+        <sender>helpIndexAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>helpIndex()</slot>
+    </connection>
+    <connection>
+        <sender>helpContentsAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>helpContents()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>helpAbout()</slot>
+    </connection>
+    <connection>
+        <sender>fileExportSDFAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>SDExportSlot()</slot>
+    </connection>
+    <connection>
+        <sender>fileExporttextAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>textExportSlot()</slot>
+    </connection>
+    <connection>
+        <sender>calculateFingerPrintsgaffFPAction</sender>
+        <signal>activated()</signal>
+        <receiver>molTable</receiver>
+        <slot>calculateFingerPrintsgaffFPAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>toolButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>molTable</receiver>
+        <slot>showPrevSlot()</slot>
+    </connection>
+    <connection>
+        <sender>toolButton3</sender>
+        <signal>clicked()</signal>
+        <receiver>molTable</receiver>
+        <slot>showNextSlot()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">molTable.ui.h</include>
+</includes>
+<signals>
+    <signal>openFile()</signal>
+    <signal>sdExportSignal(QString, int, int)</signal>
+    <signal>textExportSignal(QString, QString, int, int)</signal>
+    <signal>gaffFPSignal()</signal>
+    <signal>showSelectedSignal();</signal>
+    <signal>clearListView()</signal>
+</signals>
+<slots>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>editUndo()</slot>
+    <slot>editRedo()</slot>
+    <slot>editCut()</slot>
+    <slot>editCopy()</slot>
+    <slot>editPaste()</slot>
+    <slot>editFind()</slot>
+    <slot>helpIndex()</slot>
+    <slot>helpContents()</slot>
+    <slot>helpAbout()</slot>
+    <slot>molTable_toolBarPositionChanged( QToolBar * )</slot>
+    <slot>fileOpenAction_2_activated()</slot>
+    <slot>SDExportSlot()</slot>
+    <slot>textExportSlot()</slot>
+    <slot>calculateFingerPrintsgaffFPAction_activated()</slot>
+    <slot>showPrevSlot()</slot>
+    <slot>showNextSlot()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

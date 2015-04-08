@@ -1,0 +1,1117 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>FlexAlignDialog</class>
+<widget class="QWizard">
+    <property name="name">
+        <cstring>FlexAlignDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>602</width>
+            <height>409</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Flexible Alignment</string>
+    </property>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>WizardPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Molecule Output</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit" row="0" column="1" rowspan="2" colspan="1">
+                <property name="name">
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="text">
+                    <string>&lt;b&gt;File Based Alignment&lt;/b&gt;&lt;br&gt;
+&lt;b&gt;All &lt;/b&gt;molecules in the flexible file will be aligned to &lt;b&gt;all &lt;/b&gt;molecule in the template file
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;MolView Based Alignment&lt;/b&gt;&lt;br&gt;
+The first molecule placed into the MolView is used as the template.  </string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+                <property name="autoFormatting">
+                    <set>AutoAll</set>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="0">
+                <property name="name">
+                    <cstring>groupBox3</cstring>
+                </property>
+                <property name="title">
+                    <string>Template Molecule</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout30</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel5</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>File (.sdf)</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>tempFile</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>100</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>template.sdf</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>tempFileButton</cstring>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>45</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>../</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QCheckBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>tempView</cstring>
+                        </property>
+                        <property name="text">
+                            <string>MolView</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="0" column="1">
+                        <property name="name">
+                            <cstring>tempFlex</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Flexible</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QGroupBox" row="1" column="0">
+                <property name="name">
+                    <cstring>groupBox4</cstring>
+                </property>
+                <property name="title">
+                    <string>Flexible Molecule</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>toAlignView</cstring>
+                        </property>
+                        <property name="text">
+                            <string>In MolView</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="1" column="0">
+                        <property name="name">
+                            <cstring>layout31</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel5_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>File (.sdf)</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>toAlignFile</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>to_align.sdf</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>alignFileButton</cstring>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>45</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>../</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>WizardPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Molecule Output</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit" row="1" column="0">
+                <property name="name">
+                    <cstring>textEdit1_2</cstring>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="text">
+                    <string>&lt;b&gt;Single File Outut&lt;/b&gt;
+  &lt;br&gt;
+
+In single file mode all poses for each flexible molecule are written to a single file.  
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Mutliple File Output&lt;/b&gt;
+&lt;br&gt;
+Multiple file output will write a seperate file for each of the flexible ligands.  Each entry in the SD (*.sdf) file will be named according to the resulting alignment score.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Background&lt;/b&gt;&lt;br&gt;
+If this option is checked then the job will be run in the background.  This is the recommended mode for large jobs.  If not checked then each molecule will be added to both the listView and the molView.</string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+                <property name="autoFormatting">
+                    <set>AutoAll</set>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="0">
+                <property name="name">
+                    <cstring>groupBox14</cstring>
+                </property>
+                <property name="title">
+                    <string>Output Method</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout25</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout21</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>singleFile</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Single File</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>outFile</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>100</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>overlay.sdf</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>outFileButton</cstring>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>45</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>../</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="1" column="0">
+                        <property name="name">
+                            <cstring>layout22</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>multiFile</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Multiple Files</string>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout39</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>baseName</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>100</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>baseName_</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>multiFileButton</cstring>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>45</width>
+                                                <height>32767</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>../</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="2" column="0">
+                        <property name="name">
+                            <cstring>layout26</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>background</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Background</string>
+                                </property>
+                                <property name="accel">
+                                    <string></string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1_4</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Run large jobs in the background</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>WizardPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Overlay Setup</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget" row="0" column="0">
+                <property name="name">
+                    <cstring>layout81</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QButtonGroup">
+                        <property name="name">
+                            <cstring>buttonGroup1</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Gaussian Weights</string>
+                        </property>
+                        <property name="exclusive">
+                            <bool>false</bool>
+                        </property>
+                        <property name="radioButtonExclusive">
+                            <bool>false</bool>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout19</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout13</cstring>
+                                        </property>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>textLabel1_3</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Charge</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>cw</cstring>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>0</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>50</width>
+                                                        <height>32767</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string>3</string>
+                                                </property>
+                                            </widget>
+                                        </hbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout12_2</cstring>
+                                        </property>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>textLabel2</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Volume</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>vw</cstring>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>0</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>50</width>
+                                                        <height>32767</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string>2</string>
+                                                </property>
+                                            </widget>
+                                        </hbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout18</cstring>
+                                        </property>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>textLabel3</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Aromaticity</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>aw</cstring>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>0</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="maximumSize">
+                                                    <size>
+                                                        <width>50</width>
+                                                        <height>32767</height>
+                                                    </size>
+                                                </property>
+                                                <property name="text">
+                                                    <string>1</string>
+                                                </property>
+                                            </widget>
+                                        </hbox>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QTextEdit">
+                        <property name="name">
+                            <cstring>textEdit1_2_2</cstring>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
+                        </property>
+                        <property name="text">
+                            <string>&lt;b&gt;Gaussion Weights&lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The DynAlign module uses a Gaussian overlay function composed of 3 separate components.  You may change the relative weight of each of these functions by setting the value in the input boxes to the left.  </string>
+                        </property>
+                        <property name="wordWrap">
+                            <enum>WidgetWidth</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                        <property name="autoFormatting">
+                            <set>AutoAll</set>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>WizardPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Molecular Mechanics/Dynamics Setup</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit" row="0" column="1">
+                <property name="name">
+                    <cstring>textEdit1_2_3</cstring>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="text">
+                    <string>DynAlign is a three stage process.&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Stage 1&lt;/b&gt;&lt;br&gt;
+ The first stage makes a random perturbation to the conformational and orientations space of the flexible molecule.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Stage 2&lt;/b&gt;&lt;br&gt;
+The second stage is a Molecular Mechanics/Gaussian dynamics simulation.  The simulation performs a velocity scaling every &lt;i&gt;n&lt;/i&gt; steps to achieve a simulated annealing effect.  You can set the maximum number of steps for this stage to the left.  Finer control can be acessed with the &lt;b&gt;Fine Control&lt;/b&gt; button.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Stage 3&lt;/b&gt;&lt;br&gt;
+The Third stage is a Molecule Mechanics/Gaussian minimization.  You can set the maximum number of steps for this stage to the left.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Fine Control&lt;/b&gt;&lt;br&gt;
+Use the Fine Control button if you wish to have more control over minimization and dynamics termination criteria.  </string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+                <property name="autoFormatting">
+                    <set>AutoAll</set>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="0">
+                <property name="name">
+                    <cstring>groupBox1</cstring>
+                </property>
+                <property name="title">
+                    <string>Force Field Parameters</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>pushButton6</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Fine Control</string>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout24</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout23</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel4_3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Charges</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel4</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Max MD Steps</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel4_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Max Min Steps</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel4_2_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Dielectric</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout22</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>AM1-BCC-fast</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>AM1-BCC</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>AM1</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>MNDO</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>PM3</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Current</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>chargeType</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>maxMD</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>10000</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>MaxMin</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>2500</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>dielec</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>80</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>lastPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Simulation Setup</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit" row="0" column="1">
+                <property name="name">
+                    <cstring>textEdit1_2_4</cstring>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="text">
+                    <string>&lt;b&gt;Job Name&lt;/b&gt;&lt;br&gt;
+Set the Job name.  This is the name that can be used to terminate the job with the jobs menubar.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Iterations Per Molecule&lt;/b&gt;&lt;br&gt;
+The number of random starts for each molecule.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Max Poses&lt;/b&gt;&lt;br&gt;
+The maximum number of poses to keep for each molecule.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;RMSE for new Poses&lt;b&gt;&lt;br&gt;
+The minimum root mean square error needed to consider a pose unique.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Stop Similariy&lt;/b&gt;&lt;br&gt;
+If the search finds a pose with a similarity greater than the cuttoff point the simulation will stop the search process for that molecule.</string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+                <property name="autoFormatting">
+                    <set>AutoAll</set>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="0">
+                <property name="name">
+                    <cstring>groupBox2</cstring>
+                </property>
+                <property name="title">
+                    <string>Run Parameters</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="1" column="0">
+                        <property name="name">
+                            <cstring>layout25</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout24</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Job Name</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>jobName</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>DynAlign</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout23</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout22</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout42_2_2</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>poseNum_2</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Iterations Per Molecule</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QSpinBox">
+                                                        <property name="name">
+                                                            <cstring>Iterations</cstring>
+                                                        </property>
+                                                        <property name="maxValue">
+                                                            <number>10000</number>
+                                                        </property>
+                                                        <property name="minValue">
+                                                            <number>1</number>
+                                                        </property>
+                                                        <property name="value">
+                                                            <number>10</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout21</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLayoutWidget">
+                                                        <property name="name">
+                                                            <cstring>layout20</cstring>
+                                                        </property>
+                                                        <hbox>
+                                                            <property name="name">
+                                                                <cstring>unnamed</cstring>
+                                                            </property>
+                                                            <widget class="QLabel">
+                                                                <property name="name">
+                                                                    <cstring>poseNum</cstring>
+                                                                </property>
+                                                                <property name="text">
+                                                                    <string>Max Number of Poses</string>
+                                                                </property>
+                                                            </widget>
+                                                            <widget class="QSpinBox">
+                                                                <property name="name">
+                                                                    <cstring>poses</cstring>
+                                                                </property>
+                                                                <property name="maxValue">
+                                                                    <number>10000</number>
+                                                                </property>
+                                                                <property name="minValue">
+                                                                    <number>1</number>
+                                                                </property>
+                                                            </widget>
+                                                        </hbox>
+                                                    </widget>
+                                                    <widget class="QLayoutWidget">
+                                                        <property name="name">
+                                                            <cstring>layout19</cstring>
+                                                        </property>
+                                                        <hbox>
+                                                            <property name="name">
+                                                                <cstring>unnamed</cstring>
+                                                            </property>
+                                                            <widget class="QLabel">
+                                                                <property name="name">
+                                                                    <cstring>textLabel1</cstring>
+                                                                </property>
+                                                                <property name="text">
+                                                                    <string>RMSE for new Pose</string>
+                                                                </property>
+                                                                <property name="toolTip" stdset="0">
+                                                                    <string>This is the minimum root mean square error needed before a pose can be considered distinct enough to keep</string>
+                                                                </property>
+                                                            </widget>
+                                                            <widget class="QLineEdit">
+                                                                <property name="name">
+                                                                    <cstring>poseRMSE</cstring>
+                                                                </property>
+                                                                <property name="text">
+                                                                    <string>1.0</string>
+                                                                </property>
+                                                                <property name="toolTip" stdset="0">
+                                                                    <string>This is the minimum root mean square error needed before a pose can be considered distinct enough to keep</string>
+                                                                </property>
+                                                            </widget>
+                                                        </hbox>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout18</cstring>
+                                        </property>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>poseNum_3</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Stop at Similarity % &gt;</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>tanTerm</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>90</string>
+                                                </property>
+                                            </widget>
+                                        </hbox>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </grid>
+            </widget>
+        </grid>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton6</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>fineControlSlot()</slot>
+    </connection>
+    <connection>
+        <sender>tempView</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>tempFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>toAlignView</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>alignFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>singleFile</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>singleFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>multiFile</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>multiFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>outFileButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>newOutFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>multiFileButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>newMultiFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>tempFileButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>setTempFileSlot()</slot>
+    </connection>
+    <connection>
+        <sender>alignFileButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FlexAlignDialog</receiver>
+        <slot>setAlignFileSlot()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">flexaligndialog.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QString rmseCoords;</variable>
+    <variable access="public">QString rmse;</variable>
+    <variable access="public">QString dynIter;</variable>
+    <variable access="public">QString annealPercent;</variable>
+    <variable access="public">QString maxForce;</variable>
+    <variable access="public">QString minE;</variable>
+</variables>
+<slots>
+    <slot>fineControlSlot()</slot>
+    <slot>tempFileSlot()</slot>
+    <slot>alignFileSlot()</slot>
+    <slot>singleFileSlot()</slot>
+    <slot>multiFileSlot()</slot>
+    <slot>newOutFileSlot()</slot>
+    <slot>newMultiFileSlot()</slot>
+    <slot>setTempFileSlot()</slot>
+    <slot>setAlignFileSlot()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

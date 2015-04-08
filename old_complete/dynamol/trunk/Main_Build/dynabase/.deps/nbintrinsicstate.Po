@@ -1,0 +1,4 @@
+nbintrinsicstate.o nbintrinsicstate.o: nbintrinsicstate.cpp \
+  nbintrinsicstate.h
+
+nbintrinsicstate.h:

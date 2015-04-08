@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uic listViewRightClick.ui -o listViewRightClick.h
+uic -impl  listViewRightClick.h listViewRightClick.ui > listViewRightClick.cpp
+
+cp listViewRightClick.h ../../src
+cp listViewRightClick.cpp ../../src
+cp listViewRightClick.ui.h ../../src

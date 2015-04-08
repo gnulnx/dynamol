@@ -1,0 +1,13 @@
+#!/bin/sh
+
+uic buildHelpDialog.ui -o buildHelpDialog.h
+uic -impl buildHelpDialog.h buildHelpDialog.ui > buildHelpDialog.cpp
+
+uic buildDialog.ui -o buildDialog.h
+uic -impl buildDialog.h buildDialog.ui > buildDialog.cpp
+
+cp buildDialog.h ../../src/
+cp buildDialog.cpp ../../src
+cp buildDialog.ui.h ../../src
+cp buildHelpDialog.h ../../src
+cp buildHelpDialog.cpp ../../src

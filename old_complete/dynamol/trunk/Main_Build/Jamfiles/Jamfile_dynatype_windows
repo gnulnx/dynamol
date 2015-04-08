@@ -1,0 +1,10 @@
+
+#exe dynatype : [ glob *.cpp ] ../dynabase//libdynabase ;
+project
+	: requirements
+	<define>"WINDOWS"
+;
+
+lib libdynatype : [ glob *.cpp ] ../dynabase//libdynabase : <link>static ;
+
+

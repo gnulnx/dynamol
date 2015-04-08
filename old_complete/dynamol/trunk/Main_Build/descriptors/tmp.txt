@@ -1,0 +1,13 @@
+Jamfile.v2:31: in load-aux
+*** argument error
+* rule lib ( names + : sources * : requirements * : default-build * : usage-requirements * )
+* called with: ( libdesc : atomenv.cpp atomsig2.cpp atomsig3.cpp constitutional.cpp counts.cpp desc.cpp descriptors.cpp descsel.cpp electrotop.cpp fingerprints.cpp functional_groups.cpp main.cpp ringcounts.cpp switchboard.cpp topo.cpp binmsvcdebuglink-staticmoc_topo.cpp switchboard.h atomenv.h atomsig2.h atomsig3.h constitutional.h counts.h desc.h descriptors.h descsel.h descsel.ui.h electrotop.h fingerprints.h functional_groups.h ringcounts.h topo.h ../dynabase//libdynabase ../dynaprint//libdynaprint : <link>static : <cxxflags>-I../../Qt/3.3.5/include : <linkflags>../LIBS/libdynatype.lib : <library>/qt//qt )
+* extra argument <library>/qt//qt
+D:/boost_1_33_1/tools/build/v2/tools\builtin.jam:365:see definition of rule 'lib' being called
+D:/boost_1_33_1/tools/build/v2/build\project.jam:312: in load-jamfile
+D:/boost_1_33_1/tools/build/v2/build\project.jam:68: in load
+D:/boost_1_33_1/tools/build/v2/build\project.jam:164: in project.find
+D:/boost_1_33_1/tools/build/v2\build-system.jam:136: in load
+D:\boost_1_33_1\tools\build\v2/kernel\modules.jam:259: in import
+D:\boost_1_33_1\tools\build\v2/kernel/bootstrap.jam:153: in boost-build
+D:\boost_1_33_1\boost-build.jam:12: in module scope

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+uic hits.ui -o hits.h
+uic -impl hits.h hits.ui > hits.cpp
+cp hits.h ../../src
+cp hits.cpp ../../src
+cp hits.ui.h ../../src
+
+uic fpDialog.ui -o fpDialog.h
+uic -impl fpDialog.h fpDialog.ui > fpDialog.cpp
+cp fpDialog.h ../../src
+cp fpDialog.cpp ../../src
+cp fpDialog.ui.h ../../src
+
+
+uic gafffphelp.ui -o gafffphelp.h
+uic -impl gafffphelp.h gafffphelp.ui > gafffphelp.cpp
+cp gafffphelp.h ../../src
+cp gafffphelp.ui ../../src
+cp gafffphelp.cpp ../../src
+

@@ -1,0 +1,9 @@
+project
+	: requirements
+	<define>"LINUX"
+;
+
+lib libconvert : [ glob *.cpp ] 
+	../dynatype//libdynatype  
+	: <link>static 
+;

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+uic surfdialog2.ui -o surfdialog2.h
+uic -impl surfdialog2.h surfdialog2.ui > surfdialog2.cpp
+
+uic surfhelpdialog.ui -o surfhelpdialog.h
+uic -impl surfhelpdialog.h surfhelpdialog.ui > surfhelpdialog.cpp
+
+cp surfdialog2.h ../../dynamol
+cp surfdialog2.cpp ../../dynamol
+cp surfdialog2.ui.h ../..dynamol
+
+cp surfhelpdialog.ui.h ../../dynamol
+cp surfhelpdialog.cpp ../../dynamol
+cp surfhelpdialog.h ../../dynamol

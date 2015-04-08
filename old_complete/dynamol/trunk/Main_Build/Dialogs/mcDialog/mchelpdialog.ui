@@ -1,0 +1,110 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>mcHelpDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>mcHelpDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>410</width>
+            <height>377</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Monte Carlo Help Dialog</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout16</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>textEdit1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;Torsional Monte Carlo&lt;/b&gt;
+&lt;br&gt;
+The Dynamol Torsional Monte Carlo algorithm works by fixing bond legnths and bond angles.  Torsional space is then explored by randomly rotating single (no ring bonds) through space.  In addition the The Metropolis Criteria is evaluated by exlucing the Non Bond terms to allow a more fluid rotation through space.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Standard Monte Carlo&lt;/b&gt;
+&lt;br&gt;
+The Standard Monte Carlo Simulator is a basic simulator which makes random changes to the atomic coordinates of a the current molecule.  It is not really a suitable simulation method for modelling molecular complexes as there is no molecular rotation operator.  Future versions will likely include a torsional MC as well as an engine more apt to deal with molecular complexes.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Force Bias Monte Carlo&lt;/b&gt;
+&lt;br&gt;
+The force bias monte carlo algorithm works by making random changes along the direction of the force gradient.  This algorithm is often times more suited to local configuration space exploration than the basic MC algorithm.
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;References&lt;/b&gt;
+&lt;br&gt;
+Andrew Leach has a great introductory book to molecular modeling which itslef has a great chapter on the various Monte Carlo algorithms
+&lt;br&gt;
+&lt;br&gt;
+Molecular Modelling Principles and Applications, Andrew Leach, Addison Wesley Longman Limited 1996.</string>
+                    </property>
+                    <property name="wordWrap">
+                        <enum>WidgetWidth</enum>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>Layout1</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonOk</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;OK</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>mcHelpDialog</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

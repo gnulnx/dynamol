@@ -1,0 +1,49 @@
+#   Hello World Example from the tutorial
+#   Copyright Joel de Guzman 2002-2004. Distributed under the Boost
+#   Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt 
+#   or copy at http://www.boost.org/LICENSE_1_0.txt)
+#   [Joel de Guzman 10/9/2002]
+
+# This is the top of our own project tree
+#   Include definitions needed for Python modules
+
+import qt ;
+import python ;
+
+project 
+	: default-build <threading>multi <define>"LINUX"
+	: requirements
+	<define>BOOST_PYTHON_SOURCE
+#	<include>"/usr/include/python2.4"
+#	<include>"/usr/lib/qt-3.4/include"
+#	<define>"QT_THREAD_SUPPORT"
+	<linkflags>"-shared"
+#-nostartfiles"
+;
+
+#lib python_lib : : <name>python2.4
+#	<search>"/usr/lib/python2.4/"
+#	<search>"C:\\Python24\\lib"
+#;
+
+lib boost_python : : <file>../../libs/libboost_python.a ;
+
+#lib dynamol_lib : : <file>../../libs/libdynamollib.so ;
+#lib dynamol_lib : : <file>../../../dynamol/bin/dynamol-linux ;
+
+python-extension dynamol : [ glob *.cpp ] [ glob *.h ] 
+#	[ glob ../../dynamol/*.cpp ] [ glob ../../dynamol/*.h ] 
+#        dynamol_lib
+#	../../dynabase//libdynabase
+# 	../../convert//libconvert
+# 	../../dynacomp//libdynacomp
+#	../../dynatype//libdynatype
+# 	../../descriptors//libdesc
+#  	../../dynaprint//libdynaprint
+	boost_python
+#	python_lib
+#	: <library>/qt//qt
+	: <library>/python//python
+;
+
+

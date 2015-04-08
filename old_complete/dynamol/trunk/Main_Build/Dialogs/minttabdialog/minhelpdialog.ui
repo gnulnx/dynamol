@@ -1,0 +1,138 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>minHelpDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>minHelpDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>450</width>
+            <height>525</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>450</width>
+            <height>525</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>450</width>
+            <height>525</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Minimization Help</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>Layout1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>460</y>
+                <width>430</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonOk</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Done</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+D</string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+                <property name="default">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>textEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>430</width>
+                <height>440</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>5</hsizetype>
+                <vsizetype>5</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="hScrollBarMode">
+            <enum>AlwaysOff</enum>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="text">
+            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:10pt;font-family:Sans"&gt;
+&lt;p&gt;&lt;span style="font-weight:600"&gt;Molecular Mechanics&lt;/span&gt; &lt;br /&gt;Dyamol currently supports two complementary Amber force fields (FF): ff2003 and gaff. The Amber 2003 force field (ff2003) is used for proteins and has been parameterized from quantum calculations in a continuum dielectric to help mimic solvent polarization. ff2003 is essentially a modified Amber 99 force field. The general amber force field (gaff) is a small organic molecule force field that is parameterized to be compatible with the newer Amber force fields. Ideally charges for gaff should be obtained from the HF/6-31G* RESP method. However the AM1-BCC charges, which were designed to mimic the HF/6-31G* RESP charges, can also be used. &lt;br /&gt;&lt;br /&gt;When running an energy calculation Dynamol will default to gaff for small molecules and ff2003 for proteins. Dynamol will also default to the AM1-BCC charges when using the gaff. In addition Dynamol will try to obtain AM1-BCC charges for non-standard amino acid residues when using ff2003. It is possible to use gaff on proteins all though this method is not recommended. In addition three semi empirical based charge methods are currently possible when using gaff: MNDO, AM1, and PM3. These charges (as well as AM1-BCC) are limited to molecules with under 200 atoms. &lt;br /&gt;
+&lt;br&gt;
+Two types of electrostatic treatment are supported with the force fields. Constant dielectric and distance dependant dielectric. The distant dependant dielectric function is a simple 1/r2 as opposed to 1/r for the Coulomb potential. &lt;br /&gt;
+&lt;br&gt;
+There are four criteria which can be used to determine minimization convergence. Any of these methods can be disabled by setting the value to zero. At a bare minimum it is recommended that you at least monitor the RMSE of the Atomic Forces. 
+
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Semi Empirical&lt;/b&gt;
+&lt;br&gt;
+Dynamol currently supports very simple semi empirical minimizations using three different Hamiltonians.  All of these methods are performed with the mopac 7 program which was installed with Dynamol.  In the future we may support more of the mopac 7 functionality.  In the mean time if you wish to make better usage of the mopac 7 program you can consult the user manual which can be found in the $DYNAMOL/Documentation/MOPAC directory and use the mopac and MOPAC7 programs directly which can be found in the $DYNAMOL/bin directory.
+&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
+        </property>
+        <property name="wordWrap">
+            <enum>WidgetWidth</enum>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="1161">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000045049444154789c75954d68545714c77f23af700646b80311e6851472250b275870fcc24c5430a20b8582b1161aa18b862e4ada2eaaddb44217bacda655ba9282c56c245368c8142a4e1665664a93ce080df3b2083cc1306f208577c1811ce8c074319368a2becd79e7f2deb9bff3e77c249a8d2638c040e4227ce3eff28fe58f75d9f3342bcdc4dbbedff613e54a196b2ca10b77ec787ebc8b079202044cdfe281b6010575bdf772a59cd8fbbf359644b3d1dc75d3e0d9c1ae084c9cca90bd30c1e4994954c01a9fd25a01ddac515a0dc029b5aac33d8327bfff9dd84bbe8bf8fcd9f12e0666be9864f2ca27e4472668b4eaa88b292d17497b8eb01311771cae1da16d25ac3bc21561b1f024f11af10ea981bbb3b799be720b042a4f1709aa01c59525c60ee5585a2b62bc1897527287206c2b36059515a5be004f7e2def90ef0b5dc8607eb08bf448a7aecc80406dbd44f17111f1d3cc3f58e4e63777587c5063e6d3bbc421d4d71d009142f6b8903d2d8c5f1cef862e0403fbacb12070e954861bd76e93dc9fa6b151215c0eb09951ae5f9b8617f0f0c13de220223f7699998f6f609c808235021e5c9fca91c908d6582217f58845207b61023f3b4ae3798524505daf60fd61b65ec44c7f7799d94737f9fcc7ab00e40f4f10440a40e814102242464f180e9e3cd8f58dcfbef1fc78570426cf4cb215d5487b50db2891cbf9dc5bf89a0f3e1c25084bd081e98fbe05a0b25a4204b403be1100fc14648ff808d2d318faf59a02d7512aeb25e88404710d330292531498bc30c5c4d865b65ec4dc7f340be9ddc48d4d65ec441a457b1a43aff8adf1a96d54102088428c07da89301dc5df9fe1d657f70198fde12a6eab457648c0d31d8dedfe2c188378d2d3187a1d555c2d4027a4fabc84d316810b00a807caedcfee02507afc90b9ea12e65d68a9822784ed5e9bb73a2dd2f465317e3fb082c635eacf03cc3b49b6740b3fa5288a0fa4fb33e2fec22c39dbcb7038238807d9811e717648a8d51de2f5352e57ca096d43e969d023ddac014ae814f160cb87e2d21c77be9f266a45441d488ad06a0322840ad64ba21d43b01abfd4d81a8b3a10e7885d8c4d81a2640704018e1e31cc3f9b23589b43a5851dea6b9a318808369dc4a585dc409e60b9b5a3b117ba106d43a9aae4871c8107a6af9d8810ac29f99129440c79753c5c2fe00f1b2205934ae23a7069c4a7f0739d703d66be309ff08ddf236e569a09dd807019acf4890e08201815a6cf4d71ebcb7be4ce4de17704f184ec401a3c3877788cda1f86e22f0d00acb12f670506168be544b802953f153c88e257ea3465fb4d60fb99f449dfb30455a5f0539df85fa556aa25b6e3bd368f47df3fd8cd9e16ae4fe588fe0bd196525951d29b101f8089e306637db203798abf052c2d347682be751eefcce58be7bb2603477319860fa7b1c386e481241984ea3f31d1ba12d423a28d5e56dba46f9cc76fda61a327475fee3baf67c41314453c61b1b0f8dae6d8f6bdbd37bd6a1b7f355e2379d5fac67fe3b93596ff01a2875fddf4d7030b0000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>minHelpDialog</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

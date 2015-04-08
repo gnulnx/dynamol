@@ -1,0 +1,33 @@
+#!/bin/sh
+export PATH=$PATH:/usr/lib/qt-3.4/bin
+echo $PATH
+
+uic molTable.ui -o molTable.h
+uic -impl molTable.h molTable.ui > molTable.cpp
+
+echo "copying molTable stuff"
+cp molTable.h ../../src
+cp molTable.cpp ../../src
+cp molTable.ui.h ../../src
+
+uic descsel.ui -o descsel.h
+uic -impl descsel.h descsel.ui > descsel.cpp
+echo "Copying decscSel stuff"
+cp descsel.h ../../src
+cp descsel.cpp ../../src
+cp descsel.ui.h ../../src
+
+echo "Copying moltableexport stuff"
+uic moltablesdexport.ui -o moltablesdexport.h
+uic -impl moltablesdexport.h moltablesdexport.ui > moltablesdexport.cpp
+cp moltablesdexport.h ../../src
+cp moltablesdexport.ui.h ../../src
+cp moltablesdexport.cpp ../../src 
+
+echo "Copy moltabletextexport stuff"
+uic moltabletextexport.ui -o moltabletextexport.h
+uic -impl moltabletextexport.h moltabletextexport.ui > moltabletextexport.cpp
+cp moltabletextexport.h ../../src
+cp moltabletextexport.ui.h ../../src
+cp moltabletextexport.cpp ../../src
+

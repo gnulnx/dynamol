@@ -1,0 +1,33 @@
+To use the buildDist program folow these istructions
+
+1) Make sure the installer binary is present
+2) Make sure a LIBS directory is present
+   --This directory contains all the potential dynamoic linking libraries that will be needed
+3) Make sure the initScript file is present
+4) Make sure the break file is present
+5) Make sure the dynamol.tar.gz file is present
+    --This file is the directory structre for the install.  
+    --This file is build in the DYNAMOL/build directory
+
+
+The basic steps work as follows
+make your directory structure in the DYNAMOL_x_XX/build directory. 
+
+tar -cf dynamol.tar dynamol/
+gzip dynamol.tar
+
+cp dynamol.tar.gz ../installer/bin
+
+cd ../install/bin
+
+./buildDist
+
+then test that it works like
+cp dynamol-install test
+cd test
+chmod +x dynamol-install
+su root
+./dynamol-install
+
+
+Add any extra dynamic libraries that you think your users might need to the LIBS directory

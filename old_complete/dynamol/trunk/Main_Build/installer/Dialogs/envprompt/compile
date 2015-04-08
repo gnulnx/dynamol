@@ -1,0 +1,4 @@
+#!/bin/sh
+
+uic envprompt.ui -o envprompt.h
+uic -impl envprompt.h envprompt.ui > envprompt.cpp

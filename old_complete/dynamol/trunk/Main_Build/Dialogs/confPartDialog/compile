@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uic confpartdialog.ui -o confpartdialog.h
+uic -impl confpartdialog.h confpartdialog.ui > confpartdialog.cpp
+
+cp confpartdialog.h ../../src
+cp confpartdialog.cpp ../../src
+cp confpartdialog.ui.h ../../src

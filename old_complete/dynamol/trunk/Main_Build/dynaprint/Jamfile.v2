@@ -1,0 +1,6 @@
+lib libdynaprint : [ glob *.cpp ] 
+        ../dynatype//libdynatype 
+	: <link>static
+	: <cxxflags>"-I/usr/lib/qt-3.4/include -DLINUX"
+         <library>/qt//qt
+;

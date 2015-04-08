@@ -1,0 +1,12 @@
+#!/bin/sh
+export LD_LIBRARY_PATH=./LIBS
+mkdir .dynamol_install
+cp dynamol-install .dynamol_install
+cd .dynamol_install
+tail --lines=+13 dynamol-install > libs.tar.gz
+tar xvfz libs.tar.gz;
+chmod +x installShield
+./installShield
+cd ../
+rm -rf .dynamol_install
+exit 1

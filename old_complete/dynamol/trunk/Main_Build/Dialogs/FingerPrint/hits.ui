@@ -1,0 +1,129 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>hitsDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>hitsDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>306</width>
+            <height>350</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Hits</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>Layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>save</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Save</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTable" row="0" column="0">
+            <column>
+                <property name="text">
+                    <string>Name</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Score</string>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>table1</cstring>
+            </property>
+            <property name="numRows">
+                <number>0</number>
+            </property>
+            <property name="numCols">
+                <number>2</number>
+            </property>
+            <property name="focusStyle">
+                <enum>SpreadSheet</enum>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>save</sender>
+        <signal>clicked()</signal>
+        <receiver>hitsDialog</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>hitsDialog</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>save</sender>
+        <signal>clicked()</signal>
+        <receiver>hitsDialog</receiver>
+        <slot>saveSlot()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in declaration">map</include>
+    <include location="global" impldecl="in declaration">set</include>
+    <include location="global" impldecl="in declaration">vector</include>
+    <include location="local" impldecl="in implementation">hits.ui.h</include>
+</includes>
+<slots>
+    <slot>saveSlot()</slot>
+    <slot>buildTable( std::vector&lt;std::pair&lt;QString, float&gt; &gt; &amp; hitVec, std::set&lt;QString&gt; &amp; actives, std::set&lt;QString&gt; &amp; act_and_test, int maxResults )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

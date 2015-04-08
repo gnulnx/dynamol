@@ -1,0 +1,266 @@
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (from==level1 && to==atm && bd->order == 1) {atm->type="cc"; return true;}
+dtGaff.cpp:               if (to==level1 && from==atm && bd->order == 1) {atm->type="cc"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (from==level1 && to==atm && bd->order == 1) {atm->type="cc"; return true;}
+dtGaff.cpp:               if (to==level1 && from==atm && bd->order == 1) {atm->type="cc"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();           
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (from == level1 && to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (to == level1 && from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ce"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock(); 
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:     if (bd->order == 1) sbCount++;
+dtGaff.cpp:     else if (bd->order == 3) tbCount++;
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:               if (from == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock(); 
+dtGaff.cpp:               if (to == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:               if (from == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock(); 
+dtGaff.cpp:               if (to == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:               if (from == atm && bd->order == 1) {atm->type="cg"; return true;}
+dtGaff.cpp:      tbo += bd->order;
+dtGaff.cpp:         if (bd->order == 1) sb++;
+dtGaff.cpp:         if (bd->order == 2) db++;
+dtGaff.cpp:         if (bd->order == 3) tb++; 
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->to.lock();
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) {atm->type="nc"; return true;}
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) {atm->type="nc"; return true;}
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->to.lock();
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) {atm->type="nc"; return true;}
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) {atm->type="nc"; return true;}
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->from.lock(); 
+dtGaff.cpp:            if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="ne"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock(); 
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock();
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock();
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  if (bd->order == 2) db = true;              
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock();
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock();
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  //atom *from = bd->from;
+dtGaff.cpp:                  //atom *to = bd->to;
+dtGaff.cpp:                  atomPtr from = bd->from.lock();
+dtGaff.cpp:                  atomPtr to = bd->to.lock();
+dtGaff.cpp:                  if (bd->order == 1) {
+dtGaff.cpp:                  if (bd->order == 2) db = true;              
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->to.lock();
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) {atm->type="pc"; return true;}
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) {atm->type="pc"; return true;}
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->to.lock();
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) {atm->type="pc"; return true;}
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) {atm->type="pc"; return true;}
+dtGaff.cpp:            //atom *from = bd->from;
+dtGaff.cpp:            //atom *to = bd->to;
+dtGaff.cpp:            atomPtr from = bd->from.lock();
+dtGaff.cpp:            atomPtr to = bd->to.lock();
+dtGaff.cpp:            if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:            if (from == level1 && to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:            if (to == level1 && from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock(); 
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="pe"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to; 
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="px"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to; 
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="py"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="py"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (to==atm && bd->order == 1) {atm->type="py"; return true;}
+dtGaff.cpp:               if (from==atm && bd->order == 1) {atm->type="py"; return true;}
+dtGaff.cpp:               //atom *from = bd->from;
+dtGaff.cpp:               //atom *to = bd->to;
+dtGaff.cpp:               atomPtr from = bd->from.lock();
+dtGaff.cpp:               atomPtr to = bd->to.lock();
+dtGaff.cpp:               if (bd->order == 2) doubleCheck = true;
+dtGaff.cpp:               if (to == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:               if (from == atm && bd->order == 1) singleCheck = true;
+dtGaff.cpp:      //atom *from = bd->from;
+dtGaff.cpp:      //atom *to = bd->to;
+dtGaff.cpp:      atomPtr from = bd->from.lock();
+dtGaff.cpp:      atomPtr to = bd->to.lock();
+dtGaff.cpp:      int order = bd->order;
+dtReader.cpp:     atomPtr from = bd->from.lock();
+dtReader.cpp:     atomPtr to = bd->to.lock();
+dtReader.cpp:   //  bd->from->bonds.push_back(bd);
+dtReader.cpp:   //  bd->to->bonds.push_back(bd);   
+dtReader.cpp:     outFile << setw(3) << bd->from.lock()->getNum() << setw(3) << bd->to.lock()->getNum();
+dtReader.cpp:     outFile << setw(3) << bd->order;
+dtReader.cpp:     outFile << bd->from.lock()->getNum() << setw(15) << bd->to.lock()->getNum();
+dtReader.cpp:     outFile << setw(15) << bd->order << endl;
+dtRings.cpp:    tbo += bd->order;
+dtRings.cpp:      //atom *from = bd->from;
+dtRings.cpp:      atomPtr from = bd->from.lock();
+dtRings.cpp:      //atom *to = bd->to;
+dtRings.cpp:      atomPtr to = bd->to.lock();
+dtRings.cpp:         if ( bd->order == 2 && to->atomProps[0] == "NG" ) return true;
+dtRings.cpp:         if ( bd->order == 2 && from->atomProps[0] == "NG" ) return true;
+dtRings.cpp:         if (bd->order == 2) atm->atomProps.push_back("db");
+dtRings.cpp:         else if (bd->order == 1) atm->atomProps.push_back("sb");
+dtRings.cpp:   //atom *atm1 = bd->from;
+dtRings.cpp:   //atom *atm2 = bd->to;
+dtRings.cpp:   atomPtr atm1 = bd->from.lock();
+dtRings.cpp:   atomPtr atm2 = bd->to.lock();   
+dtRings.cpp:	  if (bd->order == 2) {
+dtRings.cpp:      	totalBondOrder += bd->order;

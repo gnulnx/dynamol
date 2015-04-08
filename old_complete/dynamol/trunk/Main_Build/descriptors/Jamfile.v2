@@ -1,0 +1,18 @@
+#project
+    # Build for LINUX
+#    : default-build <threading>multi <define>LINUX
+#    <cxxflags>"-I./ -I../../Qt/3.3.5/include -DQT_THREAD_SUPPORT -DLINUX"
+#    <cxxflags>"-I./ -I/usr/lib/qt-3.4 -DQT_THREAD_SUPPORT -DLINUX"
+#    ;
+
+lib libdesc : [ glob *.cpp ] [ glob *.h ] 
+	../dynatype//libdynatype 
+	../dynabase//libdynabase 
+	../dynaprint//libdynaprint
+	: <link>static
+	#: <cxxflags>"-I../../Qt/3.3.5/include" 
+	: <cxxflags>"-I/usr/lib/qt-3.4 -w"
+	: <library>/qt//qt
+# 	: <define>QT_THREAD_SUPPORT
+;
+	

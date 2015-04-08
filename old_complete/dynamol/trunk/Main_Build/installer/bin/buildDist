@@ -1,0 +1,70 @@
+#!/bin/bash
+
+rm -rf LIBS
+mkdir LIBS
+
+for i in /usr/lib/qt-3.4/lib/libqsa.so* \
+/usr/lib/qt-3.4/lib/libqt-mt.so* \
+/usr/X11R6/lib/libXft.so* \
+/usr/lib/libfreetype.so* \
+/usr/lib/libfontconfig.so* \
+/usr/lib/libstdc++.so* \
+/usr/X11R6/lib/libXrender.so* \
+/usr/X11R6/lib/libXrandr.so* \
+/usr/X11R6/lib/libXcursor.so* \
+/usr/X11R6/lib/libXinerama.so* \
+/lib/libgcc_s* \
+/usr/lib/libpython2.4.so*
+do
+echo $i
+cp -d $i LIBS
+done
+
+#exit
+
+echo "Usage:  Make sure the "installer" binary and the "break" text file are in the current directory.  If they are then you simply need to type:   ./buildDist { dynamol.tar.gz } {dynamol-install}"
+
+
+rm -f dynamol.tar.gz 
+rm -rf dynamol
+echo "Copying build directory"
+cp -R ../../../dynamol/ ./
+cd dynamol
+rm -rf .svn
+rm -rf bin/Scripts/.svn
+rm -rf Tutorial/Test_Sets/.svn
+rm -rf Tutorial/qsi/.svn
+rm -rf Documentation/mopac/.svn
+for i in `ls -d */`
+do
+rm -rf $i/.svn
+done
+cd ../
+
+#tar -cf dynamol.tar ../../../dynamol/
+tar -cf dynamol.tar dynamol/
+gzip dynamol.tar
+
+rm -f installShield
+cat installer break dynamol.tar.gz >> installShield
+
+chmod +x installShield
+
+rm -f libs.tar.gz
+tar -cf libs.tar installShield  LIBS/ 
+gzip libs.tar
+
+rm -f "dynamol-install"
+cat initScript libs.tar.gz >> "dynamol-install"
+
+chmod +x dynamol-install
+rm -f dynamol-install.gz
+gzip dynamol-install
+
+tmpName=`date | awk '{print $2$3$4}' | tr -d ":"`
+
+echo $tmpName
+cp dynamol-install.gz $tmpName
+
+scp "$tmpName" root@24.97.144.149:/var/www/html/nightly/1/2/3/
+

@@ -1,0 +1,34 @@
+#   Hello World Example from the tutorial
+#   Copyright Joel de Guzman 2002-2004. Distributed under the Boost
+#   Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt 
+#   or copy at http://www.boost.org/LICENSE_1_0.txt)
+#   [Joel de Guzman 10/9/2002]
+
+# This is the top of our own project tree
+project
+   : requirements
+   <threading>multi
+   <define>BOOST_PYTHON_SOURCE
+   <linkflags>"-shared"
+  # <include>"C:\\Python24\\include" 
+  # <include>"/usr/include/python2.4"
+;
+
+#import python-config ;
+import python ;
+#   Include definitions needed for Python modules
+lib boost_python : : <file>../../libs/libboost_python.a ;
+
+lib dynacomp : [ glob *.cpp ] [ glob *.h ]
+#	../../dynabase//libdynabase
+#	../../convert//libconvert
+#	../../dynacomp//libdynacomp
+#	../../dynatype//libdynatype
+	boost_python
+	: <library>/python//python
+	: <link>shared
+
+;
+
+
+

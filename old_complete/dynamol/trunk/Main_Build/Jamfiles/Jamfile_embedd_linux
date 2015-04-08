@@ -1,0 +1,23 @@
+project-root 
+;
+
+# bring in the rules for python
+SEARCH on python.jam = $(BOOST_BUILD_PATH) ;
+
+import python ;
+include python.jam ;
+
+lib embedded_program # name of the executable
+  	: #sources
+     	embedded_program.cpp
+  	: # requirements
+	<find-library>python2.4 
+		<library-path>/usr/lib
+
+	<find-library>boost_python 
+		<library-path>/home/dynamol/boost/boost/libs/python
+	  $(PYTHON_PROPERTIES)
+    		<library-path>$(PYTHON_LIB_PATH)
+    		<find-library>$(PYTHON_EMBEDDED_LIBRARY) 
+;
+

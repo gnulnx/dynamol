@@ -1,0 +1,65 @@
+#   Hello World Example from the tutorial
+#   Copyright Joel de Guzman 2002-2004. Distributed under the Boost
+#   Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt 
+#   or copy at http://www.boost.org/LICENSE_1_0.txt)
+#   [Joel de Guzman 10/9/2002]
+
+# This is the top of our own project tree
+#project-root  ; 
+
+#   Include definitions needed for Python modules
+
+#import qt ;
+import python ;
+
+#using python 2.4 ;
+#project : requirements <library>/boost/python//boost_python ;
+
+project 
+    : default-build <threading>multi 
+    <define>"WINDOWS"
+    : requirements
+    <include>"/usr/include/python2.4"
+    <include>"/usr/lib/qt-3.4/include"
+    <define>"QT_THREAD_SUPPORT"
+#    <define>"BOOST_PYTHON_STATIC_LIB"
+    <define>"BOOST_PYTHON_SOURCE"
+    <define>"WINDOWS"
+;
+
+#lib qsa : : <name>qsa112 
+	#<search>"/usr/lib/qt-3.4/lib" 
+#	<search>"D:\\Qt\\3.3.5\\lib" 
+#;
+
+#lib python_lib : : <name>python2.4
+#	<search>"/usr/lib/python2.4/"
+#	<search>"C:\\Python24\\lib"
+#;
+
+#lib boost_python : : <file>../../libs/libboost_python.a ;
+lib boost_python : : <file>../../libs/libboost_python.lib ;
+
+lib glu32 : : <name>glu32.lib ;
+lib qsa   : : <name>D:\\Qt\\3.3.5\\lib\\qsa112.lib ;
+lib opengl32 : : <name>opengl32.lib ;
+
+lib libdynamol : : <file>../../libs/dynamol.lib ;
+
+#python-extension dynamol : [ glob *.cpp ] [ glob *.h ]
+lib dynamol :  [ glob *.cpp ] [ glob *.h ]
+	libdynamol
+#	../../dynamol//dynamol
+	../../dynabase//libdynabase
+ 	../../convert//libconvert
+ 	../../dynacomp//libdynacomp
+	../../dynatype//libdynatype
+ 	../../descriptors//libdesc
+  	../../dynaprint//libdynaprint
+	boost_python
+	: <library>/python//python
+	: <link>shared
+;
+
+#install ../../../dynamol/bin/Scripts : dynamol ;
+

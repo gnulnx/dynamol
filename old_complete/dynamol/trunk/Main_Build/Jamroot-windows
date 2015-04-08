@@ -1,0 +1,15 @@
+project
+    # built MT version, unless asked otherwise.
+    : default-build
+        <threading>multi
+        <define>WINDOWS
+        <user-interface>console
+	<cxxflags>"-I../boost_1_33_1 -I./ -I../../Qt/3.3.5/include -DQT_THREAD_SUPPORT -DWINDOWS"
+;
+
+build-project dynamol ;
+#build-project dynatype ;
+
+install ../dynamol/bin/ : dynamol ;
+#	: <install-dependencies>on <install-type>EXE
+#	: <location>libs ;

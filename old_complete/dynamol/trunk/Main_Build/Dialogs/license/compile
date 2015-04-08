@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uic licPopUp.ui -o licPopUp.h
+uic -impl licPopUp.h licPopUp.ui > licPopUp.cpp
+
+cp licPopUp.ui ../../src
+cp licPopUp.h  ../../src
+cp licPopUp.cpp ../../src

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+uic sysHelpDialog.ui -o sysHelpDialog.h
+uic -impl sysHelpDialog.h sysHelpDialog.ui > sysHelpDialog.cpp
+
+uic eSetup.ui -o eSetup.h
+uic -impl eSetup.h eSetup.ui > eSetup.cpp
+
+uic confdialog.ui -o confdialog.h
+uic -impl confdialog.h confdialog.ui > confdialog.cpp
+
+
+cp head tmp;
+cat confdialog.h >> tmp;
+mv tmp confdialog.h
+
+cp sysHelp* ../../src
+cp eSetup* ../../src
+cp confdia* ../../src

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uic labeldialog.ui -o labeldialog.h
+uic -impl labeldialog.h labeldialog.ui > labeldialog.cpp
+
+cp labeldialog.h ../../src
+cp labeldialog.cpp ../../src
+cp labeldialog.ui.h ../../src

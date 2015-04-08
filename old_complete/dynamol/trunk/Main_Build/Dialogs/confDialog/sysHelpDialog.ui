@@ -1,0 +1,98 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>sysHelpDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>sysHelpDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>511</width>
+            <height>282</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Help Dialog</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout40</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>10</y>
+                <width>470</width>
+                <height>260</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="text">
+                    <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:10pt;font-family:Sans"&gt;
+&lt;p&gt;&lt;span style="font-weight:600"&gt;Overview &lt;/span&gt;&lt;br /&gt;A systematic conformational search explores conformational space in a systematic way by performing rotations about user specified rotable bonds. A systematic search is really only acceptable when the number of bonds allowed to rotate is very small. In addition it is a bad choice if you need to explore various ring conformations. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-weight:600"&gt;Energy Setup &lt;/span&gt;&lt;br /&gt;
+The cutoff value determines the maximum allowable van der Walls energy in the initial stage of the search.&lt;br&gt;
+If the minimization box is check the initial stage will be followed by a full molecular mechanics minimization using  the general amber force field (gaff) for small organic molecules and the amber 2003 force field for proteins. &lt;br /&gt;You can help control the number of conformations which are returned by lowering the acceptable energy cutoff value. You may also want to minimize the resulting conformations. The enregy convergence criteria can be set in by clicking on the Energy Setup Button. At this time all energy calculations are done with a dielectric constant of 1.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
+                </property>
+                <property name="wordWrap">
+                    <enum>WidgetWidth</enum>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>Layout1</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>0</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonOk</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Done</string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                        <property name="default">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </vbox>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>sysHelpDialog</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

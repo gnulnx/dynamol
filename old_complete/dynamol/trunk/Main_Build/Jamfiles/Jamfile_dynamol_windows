@@ -1,0 +1,50 @@
+project
+    # Build for WINDOWS
+	: requirements
+	<threading>multi
+	<include>"D:\\Qt\\3.3.5\\include"
+	<include>"D:\\boost_1_33_1"
+	<define>WINDOWS
+	<define>QT_THREAD_SUPPORT
+#	<define>BOOST_PYTHON_STATIC_LIB
+	<define>BOOST_PYTHON_SOURCE
+	<user-interface>console
+	: default-build release 
+#<threading>multi <define>WINDOWS <user-interface>console
+	<cxxflags>"-I../../boost_1_33_1 -I./ -I../../Qt/3.3.5/include -DQT_THREAD_SUPPORT -DWINDOWS -w"
+;
+
+import qt ;
+#import python-config ;
+import python ;
+#using python 2.4 : C:\\Python24	;
+
+lib glu32 : : <name>glu32.lib ;
+lib qsa   : : <name>D:\\Qt\\3.3.5\\lib\\qsa112.lib ;
+#lib qt    : : <name>D:\\Qt\\3.3.5\\lib\\qt-mt335.lib ;
+lib opengl32 : : <name>opengl32.lib ;
+
+#lib boost_python : : <file>../libs/boost_python.lib ;
+
+lib boost_python : : <file>../libs/libboost_python.lib ;
+
+lib python_lib : : <name>python24
+	<search>C:\\Python24\\libs
+;
+
+exe dynamol : [ glob *.cpp ] [ glob *.h ] 
+	../dynabase//libdynabase
+	../convert//libconvert
+	../dynacomp//libdynacomp
+	../dynatype//libdynatype
+	../descriptors//libdesc
+	../dynaprint//libdynaprint
+	glu32
+	opengl32
+	qsa
+	#qt
+	boost_python
+	python_lib
+	: <library>/qt//qt
+	: <library>/python//python
+;

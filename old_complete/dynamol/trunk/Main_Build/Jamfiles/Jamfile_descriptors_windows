@@ -1,0 +1,18 @@
+project descriptors
+   : requirements
+	<threading>multi
+	<include>"D:\\Qt\\3.3.5\\include"
+	<define>"QT_THREAD_SUPPORT"
+	<define>"WINDOWS"
+	<cxxflags>""
+   : default-build release
+;
+
+lib libdesc : [ glob *.cpp ] [ glob *.h ] 
+	../dynatype//libdynatype 
+	../dynabase//libdynabase 
+	../dynaprint//libdynaprint
+#	: <library>/qt//qt
+	: <link>static
+;
+	
