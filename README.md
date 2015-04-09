@@ -1,13 +1,24 @@
 # dynamol
 
-This code base has not been maintained in a number of years.  
-The code requires QT 3?  I believe to be compiled.
-It will also require the Boost C++ libraries which are used to both extend functionality to python as well as embedding the pythogn interpretor for command line scripting.
+Dynamol was original a commercial endevour.  The project was abandoned for a number of years (7-8) and has only recently been picked back up.  The goal now is to open source the code.
 
-Yes I really need to bring this project back to life.. and to be fair open sourcing it was the first step in that direction.
+Dynamol is actually a shell of it's former self though all the original code can still be found in the old_complete directory.  The main Build directory today is just a simple molecular viewer for SDF and PDF files.  It only supports wire frame rendering at this time.
+
+Dyamol was originally fragmented when an effort was made to join forces with PyMol.  Eventually all commercial aspirations of Dynamol faded and the code become very obsolete.  
+
+Today Dynamol is rising from the ashes as an open source project and it's being rebuild from the ground up to have Python be a major component of it.  The original Dynamol did have python both extended and embedded but it was more of an after thought with all the primary code being written in C++.   Today only the computational demanding parts will be written in C++.  Things like reading mol files etc are much easier, and honeslty more robust, to handle on the python side.  Pluse the more code that is developed in python the easier it is to use things like python unit testing.  
+
+So, currently Dynamol isn't all that useable, and honestly the code base is a mess.  :(   Though work has once again resumed, though in a greatly reduced fasion.  If you want to contribute by all means fork the project, make your changes, and submit a PR.
+
+next steps are to get Stick model rendering working.
+The get surface and ribbon code working again.
+After that Energy minimization and Dynamics Code will be integrated
+After that perhaps the SEAL molecular dynamics alighment code...  
 
 
-Compile Notes:
+
+
+Compile Notes (OSX):
 =============
 You must compile with: 
 
