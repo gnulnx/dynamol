@@ -1,4 +1,4 @@
-# dynamol
+# Dynamol
 
 Dynamol was original a commercial endevour.  The project was abandoned for a number of years (7-8) and has only recently been picked back up.  The goal now is to open source the code.
 
