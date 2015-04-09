@@ -12,13 +12,15 @@ So, currently Dynamol isn't all that useable, and honestly the code base is a me
 
 *Next steps are to get Stick model rendering working.
 
-*The get surface and ribbon code working again.
+*Then get surface and ribbon code working again.
 
-*After that Energy minimization and Dynamics Code will be integrated.
+*After that Energy Minimization and Dynamics Code will be integrated.
 
-*After that perhaps the SEAL molecular dynamics alighment code...  
+*After that perhaps the SEAL molecular dynamics alighment code...
 
+* And who knows maybe after that the molecular fingerprint code can be rebuild.
 
+* ... Any other ideas are welcome.
 
 
 Compile Notes (OSX):
