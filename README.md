@@ -10,10 +10,10 @@ Today Dynamol is rising from the ashes as an open source project and it's being 
 
 So, currently Dynamol isn't all that useable, and honestly the code base is a mess.  :(   Though work has once again resumed, though in a greatly reduced fasion.  If you want to contribute by all means fork the project, make your changes, and submit a PR.
 
-next steps are to get Stick model rendering working.
-The get surface and ribbon code working again.
-After that Energy minimization and Dynamics Code will be integrated
-After that perhaps the SEAL molecular dynamics alighment code...  
+*Next steps are to get Stick model rendering working.
+*The get surface and ribbon code working again.
+*After that Energy minimization and Dynamics Code will be integrated
+*After that perhaps the SEAL molecular dynamics alighment code...  
 
 
 
